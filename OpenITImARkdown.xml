@@ -133,7 +133,7 @@
 
       <Detect2Chars attribute="Para" context="#pop" char="#" char1=" " column="0"/>
       <Detect2Chars attribute="ParaCont" context="#pop" char="~" char1="~" column="0"/>
-      <RegExpr attribute="PageNo" context="#pop" String="PageV\d+P\d+"/>
+      <RegExpr attribute="PageNo" context="#pop" String="Page(?:Beg|End)?V[^P]+P\d+"/>
       <RegExpr attribute="Milestone" context="#pop" String="ms\d\d+"/>
       <RegExpr attribute="Number" context="#pop" String="\d+"/>
       <RegExpr attribute="Number" context="#pop" String="[.;?,:،؛؟()[\]]"/>
