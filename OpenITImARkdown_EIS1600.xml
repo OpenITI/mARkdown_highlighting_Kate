@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language name="OpenITImARkdown, EIS1600 flavor" version="1" kateversion="5.0" section="Markup" extensions="*.EIS1600" priority="9" author="Maxim Romanov, EIS1600" license="GPL">
+
+<!DOCTYPE language SYSTEM "language.dtd"
+[
+  <!ENTITY prefixLR "_[ءة]_">
+
+  <!ENTITY red      "#E74C3C">
+  <!ENTITY orange   "#E59866">
+  <!ENTITY yellow   "#F7DC6F">
+  <!ENTITY green    "#7DCEA0">
+  <!ENTITY blueLite "#85C1E9">
+  <!ENTITY blueDark "#3498DB">
+  <!ENTITY violet   "#BB8FCE">
+
+]
+>
+
+<highlighting>
+  <list>
+  </list>
+  <contexts>
+    <context name="Start Document" attribute="Normal Text" lineEndContext="Body" lineEmptyContext="Body" fallthroughContext="Body">
+      <RegExpr attribute="Metadata" context="MetadataText" String="######OpenITI#" column="0" beginRegion="metadata"/>
+    </context>
+    <context name="MetadataText" attribute="Metadata" lineEndContext="#stay">
+      <StringDetect attribute="Metadata" context="#pop!Body" fallthroughContext="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
+    </context>
+    <context name="EditorialText" attribute="Editor" lineEndContext="#stay" lineEmptyContext="#stay">
+      <Detect2Chars attribute="Editor" context="#pop!Body" fallthroughContext="#pop!Body" char="#" char1="#" column="0" endRegion="editorial" lookAhead="true"/>
+    </context>
+
+    <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
+
+      <!-- HEADERS -->
+      <RegExpr attribute="Header H1" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{1} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H2" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{2} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H3" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{3} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H4" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{4} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H5" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{5} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H6" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{6} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H7" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{7} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H8" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{8} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H9" context="#pop" String="&prefixLR;#\$\d{12}\$ \|{9} .*$" column="0" endRegion="section" beginRegion="section"/>
+
+      <!-- HEADERS: MIU - BIOGRAPHIES -->
+      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#\$\d{12}\$ \$(BIO_MAN\$)? " column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#\$\d{12}\$ \$\$(BIO_WOM\$)? " column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#\$\d{12}\$ \$\$\$(BIO_REF\$)? " column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#\$\d{12}\$ \$\$\$\$(BIO_NLI\$)? " column="0" endRegion="section" beginRegion="section"/>
+
+      <!-- HEADERS: MIU - EVENTS -->
+      <RegExpr attribute="Event" context="#pop" String="&prefixLR;#\$\d{12}\$ @(CHR_EVE@)? " column="0"/>
+
+      <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
+      <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;\$\d{12}\$ (@[A-Z]+@ )+~$" column="0"/>
+
+
+      <RegExpr attribute="DictionaryItem" context="#pop" String="^### \$[A-Z]+_[A-Z]+\$" column="0"/>
+
+      <RegExpr attribute="EditorHeader" context="EditorialText" String="^### \|(?:EDITOR|PARATEXT|APPENDIX)\| ?$" column="0" beginRegion="editorial"/>
+      <RegExpr attribute="Uri" context="#pop" String="\d\d\d\d[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z\d]+-[a-z]{3}\d+)?)?"/>
+      <StringDetect attribute="Poetry" context="#pop" String="%~%"/>
+      
+      <!-- NAMED ENTITIES -->
+
+      <RegExpr attribute="Toponym" context="#pop" String="@t\d\d\b|@T\d1(\W+\w+){1}|@T\d2(\W+\w+){2}|@T\d3(\W+\w+){3}|@T\d4(\W+\w+){4}|@T\d5(\W+\w+){5}|@T\d6(\W+\w+){6}|@T\d7(\W+\w+){7}|@T\d8(\W+\w+){8}|@T\d9(\W+\w+){9}|@T\d10(\W+\w+){10}|@T\d11(\W+\w+){11}|@T\d12(\W+\w+){12}|@T\d13(\W+\w+){13}|@T\d14(\W+\w+){14}|@T\d15(\W+\w+){15}|@T\d16(\W+\w+){16}|@T\d17(\W+\w+){17}|@T\d18(\W+\w+){18}|@T\d19(\W+\w+){19}|@T\d20(\W+\w+){20}|@T\d21(\W+\w+){21}|@T\d22(\W+\w+){22}|@T\d23(\W+\w+){23}|@T\d24(\W+\w+){24}|@T\d25(\W+\w+){25}"/>
+
+      <RegExpr attribute="Person" context="#pop" String="@p\d\d\b|@P\d1(\W+\w+){1}|@P\d2(\W+\w+){2}|@P\d3(\W+\w+){3}|@P\d4(\W+\w+){4}|@P\d5(\W+\w+){5}|@P\d6(\W+\w+){6}|@P\d7(\W+\w+){7}|@P\d8(\W+\w+){8}|@P\d9(\W+\w+){9}|@P\d10(\W+\w+){10}|@P\d11(\W+\w+){11}|@P\d12(\W+\w+){12}|@P\d13(\W+\w+){13}|@P\d14(\W+\w+){14}|@P\d15(\W+\w+){15}|@P\d16(\W+\w+){16}|@P\d17(\W+\w+){17}|@P\d18(\W+\w+){18}|@P\d19(\W+\w+){19}|@P\d20(\W+\w+){20}|@P\d21(\W+\w+){21}|@P\d22(\W+\w+){22}|@P\d23(\W+\w+){23}|@P\d24(\W+\w+){24}|@P\d25(\W+\w+){25}"/>
+
+      <RegExpr attribute="Year" context="#pop" String="@y\d+\b|@Y[A-Z]\d1_\d{1,4}(\W+\w+){1}|@Y[A-Z]\d2_\d{1,4}(\W+\w+){2}|@Y[A-Z]\d3_\d{1,4}(\W+\w+){3}|@Y[A-Z]\d4_\d{1,4}(\W+\w+){4}|@Y[A-Z]\d5_\d{1,4}(\W+\w+){5}|@Y[A-Z]\d6_\d{1,4}(\W+\w+){6}|@Y[A-Z]\d7_\d{1,4}(\W+\w+){7}|@Y[A-Z]\d8_\d{1,4}(\W+\w+){8}|@Y[A-Z]\d9_\d{1,4}(\W+\w+){9}"/>
+
+      <RegExpr attribute="PageNo" context="#pop" String="Page(?:Beg|End)?V[^P]+P\d+"/>
+      <RegExpr attribute="Milestone" context="#pop" String="ms\d+"/>
+      <RegExpr attribute="Number" context="#pop" String="\d+"/>
+      <RegExpr attribute="Number" context="#pop" String="[.;?,:،؛؟()[\]]"/>
+
+    </context>
+
+  </contexts>
+
+  <itemDatas>
+
+    <itemData name="Normal Text" defStyleNum="dsNormal" color="#2C3E50"/>
+    <itemData name="Milestone" defStyleNum="dsNormal" color="#ffff00" backgroundColor="#00008B" bold="true"/>
+    <itemData name="Uri" defStyleNum="dsNormal" backgroundColor="#90EE90"/>
+
+    <itemData name="PageNo" defStyleNum="dsNormal" color="#fafad2" backgroundColor="#C39BD3" bold="true"/>
+    <itemData name="Poetry" defStyleNum="dsNormal" color="#fafad2" backgroundColor="#C39BD3" bold="true"/>
+
+    <itemData name="Number" defStyleNum="dsNormal" color="#566573" backgroundColor="#EAECEE" bold="true"/>
+
+    <!--
+    <itemData name="Header H1" defStyleNum="dsNormal" color="#000000" backgroundColor="&red;" bold="true"/>
+    <itemData name="Header H2" defStyleNum="dsNormal" color="#000000" backgroundColor="&orange;" bold="true"/>
+    <itemData name="Header H3" defStyleNum="dsNormal" color="#000000" backgroundColor="&yellow;" bold="true"/>
+    <itemData name="Header H4" defStyleNum="dsNormal" color="#000000" backgroundColor="&green;" bold="true"/>
+    <itemData name="Header H5" defStyleNum="dsNormal" color="#000000" backgroundColor="&blueLite;" bold="true"/>
+    <itemData name="Header H6" defStyleNum="dsNormal" color="#000000" backgroundColor="&blueDark;" bold="true"/>
+    <itemData name="Header H7" defStyleNum="dsNormal" color="#000000" backgroundColor="&violet;" bold="true"/>
+    <itemData name="Header H8" defStyleNum="dsNormal" color="#000000" backgroundColor="#AEB6BF" bold="true"/>
+    <itemData name="Header H9" defStyleNum="dsNormal" color="#000000" backgroundColor="#AEB6BF" bold="true"/>
+    -->
+
+    <itemData name="Header H1" defStyleNum="dsNormal" color="#E74C3C" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H2" defStyleNum="dsNormal" color="#F39C12" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H3" defStyleNum="dsNormal" color="#D4AC0D" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H4" defStyleNum="dsNormal" color="#229954" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H5" defStyleNum="dsNormal" color="#2874A6" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H6" defStyleNum="dsNormal" color="#1A5276" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H7" defStyleNum="dsNormal" color="#6C3483" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H8" defStyleNum="dsNormal" color="#000000" backgroundColor="#EAECEE" bold="true"/>
+    <itemData name="Header H9" defStyleNum="dsNormal" color="#000000" backgroundColor="#EAECEE" bold="true"/>
+
+    <itemData name="MORPHO" defStyleNum="dsNormal" color="#ff7F50" backgroundColor="#ffffff" bold="true"/>
+
+    <itemData name="BioMAN" defStyleNum="dsNormal" color="#138D75" backgroundColor="#ffffff" bold="true"/>
+    <itemData name="BioWOM" defStyleNum="dsNormal" color="#505050" backgroundColor="#800080" bold="true"/>
+    <itemData name="BioREF" defStyleNum="dsNormal" color="#505050" backgroundColor="#FFD700" bold="true"/>
+    <itemData name="BioNLI" defStyleNum="dsNormal" color="#505050" backgroundColor="#32CD32" bold="true"/>
+
+    <itemData name="Event" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#FFD700"/>
+    <itemData name="EventList" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#32CD32"/>
+    <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#cccccc" backgroundColor="#800080"/>
+
+    <itemData name="EditorHeader" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#7B68EE"/>
+    <itemData name="Metadata" defStyleNum="dsComment"/>
+    <itemData name="Editor" defStyleNum="dsComment"/>
+
+    <!-- NAMED ENTITIES -->
+    <itemData name="Toponym" defStyleNum="dsNormal" color="#FFFFFF" backgroundColor="#7D3C98" bold="true"/>
+    <itemData name="Person"  defStyleNum="dsNormal" color="#FFFFFF" backgroundColor="#3498DB" bold="true"/>
+    <itemData name="Year"    defStyleNum="dsNormal" color="#FFFFFF" backgroundColor="#229954" bold="true"/>
+
+
+ </itemDatas>
+</highlighting>
+<general></general>
+</language>
+

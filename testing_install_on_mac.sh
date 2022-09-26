@@ -6,6 +6,7 @@ cp ./OpenITImARkdown_EIS1600.xml "$HOME/Library/Application Support/org.kde.synt
 echo "OpenITImARkdownSH highlighting scheme for Kate installed."
 echo "Close Kate and (re-)open it for the changes to take effect."
 
+
 # to quickly reopen KATE for testing
 killall kate
-open -a Kate /Users/romanov/_OpenITI/mARkdown_highlighting_Kate/TEST_FILES/0795IbnRajabHanbali.DhaylTabaqatHanabila.Shamela0031366-ara1.EIS1600
+open -a Kate /Users/romanov/Dropbox/_EIS1600_Working/github_repositories/mARkdown_highlighting_gedit/TEST_FILES/0795IbnRajabHanbali.DhaylTabaqatHanabila.Shamela0031366-ara1.EIS1600

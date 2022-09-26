@@ -15,21 +15,21 @@
       <Detect2Chars attribute="Editor" context="#pop!Body" fallthroughContext="#pop!Body" char="#" char1="#" column="0" endRegion="editorial" lookAhead="true"/>
     </context>
     <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
-      <RegExpr attribute="Header H1" context="#pop" String="^### \| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H2" context="#pop" String="^### \|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H3" context="#pop" String="^### \|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H4" context="#pop" String="^### \|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H5" context="#pop" String="^### \|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H6" context="#pop" String="^### \|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H7" context="#pop" String="^### \|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H8" context="#pop" String="^### \|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H9" context="#pop" String="^### \|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H10" context="#pop" String="^### \|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H11" context="#pop" String="^### \|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H12" context="#pop" String="^### \|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H13" context="#pop" String="^### \|\|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H14" context="#pop" String="^### \|\|\|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H15" context="#pop" String="^### \|\|\|\|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H1" context="#pop" String="### \| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H2" context="#pop" String="### \|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H3" context="#pop" String="### \|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H4" context="#pop" String="### \|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H5" context="#pop" String="### \|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H6" context="#pop" String="### \|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H7" context="#pop" String="### \|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H8" context="#pop" String="### \|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H9" context="#pop" String="### \|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H10" context="#pop" String="### \|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H11" context="#pop" String="### \|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H12" context="#pop" String="### \|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H13" context="#pop" String="### \|\|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H14" context="#pop" String="### \|\|\|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H15" context="#pop" String="### \|\|\|\|\|\|\|\|\|\|\|\|\|\|\| .*$" column="0" endRegion="section" beginRegion="section"/>
 
       <RegExpr attribute="BioMale" context="#pop" String="^### \$ " column="0"/>
       <RegExpr attribute="BioMale" context="#pop" String="^### \$BIO_MAN\$" column="0"/>
