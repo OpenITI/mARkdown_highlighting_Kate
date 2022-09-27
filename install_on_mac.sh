@@ -3,9 +3,7 @@ cd -- "$(dirname "$BASH_SOURCE")"
 mkdir -p "$HOME/Library/Application Support/org.kde.syntax-highlighting/syntax"
 cp ./OpenITImARkdown.xml "$HOME/Library/Application Support/org.kde.syntax-highlighting/syntax"
 cp ./OpenITImARkdown_EIS1600.xml "$HOME/Library/Application Support/org.kde.syntax-highlighting/syntax"
-echo "OpenITImARkdownSH highlighting scheme for Kate installed."
+echo "- OpenITImARkdownSH (main flavor) highlighting scheme for Kate has been installed."
+echo "- OpenITImARkdownSH (EIS1600 Flavor) highlighting scheme for Kate has been installed."
 echo "Close Kate and (re-)open it for the changes to take effect."
 
-# to quickly reopen KATE for testing
-killall kate
-open -a Kate /Users/romanov/_OpenITI/mARkdown_highlighting_Kate/TEST_FILES/0795IbnRajabHanbali.DhaylTabaqatHanabila.Shamela0031366-ara1.EIS1600
