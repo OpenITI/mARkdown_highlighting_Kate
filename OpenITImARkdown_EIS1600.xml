@@ -63,6 +63,8 @@
       
       <!-- NAMED ENTITIES -->
 
+      <RegExpr attribute="NER_AUTO" context="#pop" String="@(TOP|PER|YEA|SOC)\d1(\W+\w+){1}|@(TOP|PER|YEA|SOC)\d2(\W+\w+){2}|@(TOP|PER|YEA|SOC)\d3(\W+\w+){3}|@(TOP|PER|YEA|SOC)\d4(\W+\w+){4}|@(TOP|PER|YEA|SOC)\d5(\W+\w+){5}|@(TOP|PER|YEA|SOC)\d6(\W+\w+){6}|@(TOP|PER|YEA|SOC)\d7(\W+\w+){7}|@(TOP|PER|YEA|SOC)\d8(\W+\w+){8}|@(TOP|PER|YEA|SOC)\d9(\W+\w+){9}|@(TOP|PER|YEA|SOC)\d10(\W+\w+){10}|@(TOP|PER|YEA|SOC)\d11(\W+\w+){11}|@(TOP|PER|YEA|SOC)\d12(\W+\w+){12}|@(TOP|PER|YEA|SOC)\d13(\W+\w+){13}|@(TOP|PER|YEA|SOC)\d14(\W+\w+){14}|@(TOP|PER|YEA|SOC)\d15(\W+\w+){15}|@(TOP|PER|YEA|SOC)\d16(\W+\w+){16}|@(TOP|PER|YEA|SOC)\d17(\W+\w+){17}|@(TOP|PER|YEA|SOC)\d18(\W+\w+){18}|@(TOP|PER|YEA|SOC)\d19(\W+\w+){19}|@(TOP|PER|YEA|SOC)\d20(\W+\w+){20}|@(TOP|PER|YEA|SOC)\d21(\W+\w+){21}|@(TOP|PER|YEA|SOC)\d22(\W+\w+){22}|@(TOP|PER|YEA|SOC)\d23(\W+\w+){23}|@(TOP|PER|YEA|SOC)\d24(\W+\w+){24}|@(TOP|PER|YEA|SOC)\d25(\W+\w+){25}"/>/>
+
       <RegExpr attribute="Toponym" context="#pop" String="@t\d\d\b|@T\d1(\W+\w+){1}|@T\d2(\W+\w+){2}|@T\d3(\W+\w+){3}|@T\d4(\W+\w+){4}|@T\d5(\W+\w+){5}|@T\d6(\W+\w+){6}|@T\d7(\W+\w+){7}|@T\d8(\W+\w+){8}|@T\d9(\W+\w+){9}|@T\d10(\W+\w+){10}|@T\d11(\W+\w+){11}|@T\d12(\W+\w+){12}|@T\d13(\W+\w+){13}|@T\d14(\W+\w+){14}|@T\d15(\W+\w+){15}|@T\d16(\W+\w+){16}|@T\d17(\W+\w+){17}|@T\d18(\W+\w+){18}|@T\d19(\W+\w+){19}|@T\d20(\W+\w+){20}|@T\d21(\W+\w+){21}|@T\d22(\W+\w+){22}|@T\d23(\W+\w+){23}|@T\d24(\W+\w+){24}|@T\d25(\W+\w+){25}"/>
 
       <RegExpr attribute="Person" context="#pop" String="@p\d\d\b|@P\d1(\W+\w+){1}|@P\d2(\W+\w+){2}|@P\d3(\W+\w+){3}|@P\d4(\W+\w+){4}|@P\d5(\W+\w+){5}|@P\d6(\W+\w+){6}|@P\d7(\W+\w+){7}|@P\d8(\W+\w+){8}|@P\d9(\W+\w+){9}|@P\d10(\W+\w+){10}|@P\d11(\W+\w+){11}|@P\d12(\W+\w+){12}|@P\d13(\W+\w+){13}|@P\d14(\W+\w+){14}|@P\d15(\W+\w+){15}|@P\d16(\W+\w+){16}|@P\d17(\W+\w+){17}|@P\d18(\W+\w+){18}|@P\d19(\W+\w+){19}|@P\d20(\W+\w+){20}|@P\d21(\W+\w+){21}|@P\d22(\W+\w+){22}|@P\d23(\W+\w+){23}|@P\d24(\W+\w+){24}|@P\d25(\W+\w+){25}"/>
@@ -74,7 +76,6 @@
       <RegExpr attribute="InText_Numbers" context="#pop" String="\d+"/>
       <RegExpr attribute="InText_NonLetters" context="#pop" String="[.;?,:،؛؟()[\]]"/>
       <StringDetect attribute="InText_Poetry" context="#pop" String="%~%"/>
-
 
     </context>
 
@@ -131,13 +132,14 @@
     <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#cccccc" backgroundColor="#800080"/>
 
     <itemData name="EditorHeader" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#7B68EE"/>
-    <itemData name="Metadata" defStyleNum="dsComment"/>
+    <itemData name="Metadata" defStyleNum="dsComment" italic="false"/>
     <itemData name="Editor" defStyleNum="dsComment"/>
 
     <!-- NAMED ENTITIES -->
-    <itemData name="Toponym" defStyleNum="dsNormal" color="#17202A" backgroundColor="#D7BDE2" bold="true"/>
-    <itemData name="Person"  defStyleNum="dsNormal" color="#17202A" backgroundColor="#AED6F1" bold="true"/>
-    <itemData name="Year"    defStyleNum="dsNormal" color="#17202A" backgroundColor="#A2D9CE" bold="true"/>
+    <itemData name="NER_AUTO" defStyleNum="dsNormal" color="#000000" backgroundColor="#ABB2B9" bold="true"/>
+    <itemData name="Toponym"  defStyleNum="dsNormal" color="#17202A" backgroundColor="#D7BDE2" bold="true"/>
+    <itemData name="Person"   defStyleNum="dsNormal" color="#17202A" backgroundColor="#AED6F1" bold="true"/>
+    <itemData name="Year"     defStyleNum="dsNormal" color="#17202A" backgroundColor="#A2D9CE" bold="true"/>
 
 
  </itemDatas>
