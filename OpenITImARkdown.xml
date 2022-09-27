@@ -62,6 +62,7 @@
       <RegExpr attribute="MorphologicalUndefined" context="#pop" String="^#~:undefined:\s*$" column="0"/>
       <RegExpr attribute="Morphological" context="#pop" String="^#~:[a-zA-Z0-9]+:\s*$" column="0"/>
 
+      <RegExpr attribute="Year" context="#pop" String="@y\d+\b|@Y[A-Z]\d+"/>
 
       <RegExpr attribute="Semantic" context="#pop" String="Y[BEAY]\d{1,4}"/>
       <RegExpr attribute="Semantic" context="#pop" String="(?:@[A-Z]|@[A-Z]{3})\d1[\s][\sa-zA-Z0-9]*[^\sa-zA-Z0-9]+"/>
@@ -243,6 +244,7 @@
     <itemData name="EventList" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#32CD32"/>
     <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#cccccc" backgroundColor="#800080"/>
     <itemData name="Semantic" defStyleNum="dsNormal" color="#cccccc" backgroundColor="#800080"/>
+    <itemData name="Year"    defStyleNum="dsNormal" color="#FFFFFF" backgroundColor="#229954" bold="true"/>
     <itemData name="EditorHeader" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#7B68EE"/>
     <itemData name="Metadata" defStyleNum="dsComment"/>
     <itemData name="Editor" defStyleNum="dsComment"/>
