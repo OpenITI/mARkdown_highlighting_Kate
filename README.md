@@ -1,5 +1,10 @@
 # Installing the OpenITI mARkdown Highlighting schema for Kate editor
 
+## GENERAL
+
+- The highlighting schemas work best with the theme `Atom One Light`
+	- `Preferences` > `Colore Schemes` > `Select Scheme`: `Atom One Light`
+
 ## On Mac:
 
 1. Download the zip file https://github.com/OpenITI/mARkdown_highlighting_Kate/raw/main/mARkdown_highlighting_Kate.zip
