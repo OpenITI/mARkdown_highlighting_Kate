@@ -23,5 +23,9 @@
 
 ## On Linux
 
-... *to be added* ...
+1. Download the zip file https://github.com/OpenITI/mARkdown_highlighting_Kate/raw/main/mARkdown_highlighting_Kate.zip
+2. Unzip the zip file
+3. Open the unzipped folder in your file manager, and double-click `install_on_linux.sh`. This will install the OpenITImARkdown.xml file in the folder `$HOME/.local/share/org.kde.syntax-highlighting/syntax/`
+4. Close Kate and (re-)open it. The OpenITImARkdown highlighting scheme should now be visible in Kate's menu: Tools > Highlighting > Markup
+5. You can test whether it worked by opening the tags_test.mARkdown file in Kate; you should see the highlighting schema in action. 
 
