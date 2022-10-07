@@ -26,38 +26,40 @@
     <context name="MetadataText" attribute="Metadata" lineEndContext="#stay">
       <StringDetect attribute="Metadata" context="#pop!Body" fallthroughContext="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
     </context>
+    <!--
     <context name="EditorialText" attribute="Editor" lineEndContext="#stay" lineEmptyContext="#stay">
       <Detect2Chars attribute="Editor" context="#pop!Body" fallthroughContext="#pop!Body" char="#" char1="#" column="0" endRegion="editorial" lookAhead="true"/>
     </context>
+    -->
 
     <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
 
       <!-- HEADERS -->
-      <RegExpr attribute="Header H1" context="#pop" String="&prefixLR;#=\d{12}= \|{1} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H2" context="#pop" String="&prefixLR;#=\d{12}= \|{2} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H3" context="#pop" String="&prefixLR;#=\d{12}= \|{3} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H4" context="#pop" String="&prefixLR;#=\d{12}= \|{4} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H5" context="#pop" String="&prefixLR;#=\d{12}= \|{5} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H6" context="#pop" String="&prefixLR;#=\d{12}= \|{6} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H7" context="#pop" String="&prefixLR;#=\d{12}= \|{7} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H8" context="#pop" String="&prefixLR;#=\d{12}= \|{8} .*$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H9" context="#pop" String="&prefixLR;#=\d{12}= \|{9} .*$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H1" context="#pop" String="&prefixLR;#=\d{12}= \|{1}([^|]+)?$|^\|{1}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H2" context="#pop" String="&prefixLR;#=\d{12}= \|{2}([^|]+)?$|^\|{2}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H3" context="#pop" String="&prefixLR;#=\d{12}= \|{3}([^|]+)?$|^\|{3}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H4" context="#pop" String="&prefixLR;#=\d{12}= \|{4}([^|]+)?$|^\|{4}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H5" context="#pop" String="&prefixLR;#=\d{12}= \|{5}([^|]+)?$|^\|{5}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H6" context="#pop" String="&prefixLR;#=\d{12}= \|{6}([^|]+)?$|^\|{6}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H7" context="#pop" String="&prefixLR;#=\d{12}= \|{7}([^|]+)?$|^\|{7}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H8" context="#pop" String="&prefixLR;#=\d{12}= \|{8}([^|]+)?$|^\|{8}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H9" context="#pop" String="&prefixLR;#=\d{12}= \|{9}([^|]+)?$|^\|{9}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- HEADERS: MIU - BIOGRAPHIES -->
-      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#=\d{12}= \$(BIO_MAN\$)? " column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#=\d{12}= \$\$(BIO_WOM\$)? " column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$(BIO_REF\$)? " column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$\$(BIO_NLI\$)? " column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#=\d{12}= \$(BIO_MAN\$)? |^\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#=\d{12}= \$\$(BIO_WOM\$)? |^\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$(BIO_REF\$)? |^\$\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$\$(BIO_NLI\$)? |^\$\$\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- HEADERS: MIU - EVENTS -->
-      <RegExpr attribute="Event" context="#pop" String="&prefixLR;#=\d{12}= (@|\$CHR_EVE\$)? " column="0"/>
+      <RegExpr attribute="Event" context="#pop" String="&prefixLR;#=\d{12}= (@|\$CHR_EVE\$)? |^@([^@]+)?$" column="0"/>
 
       <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
       <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
 
-      <RegExpr attribute="DictionaryItem" context="#pop" String="^### \$[A-Z]+_[A-Z]+\$" column="0"/>
+      <RegExpr attribute="DictionaryItem" context="#pop" String="&prefixLR;#=\d{12}= \$[A-Z]+_[A-Z]+\$" column="0"/>
 
-      <RegExpr attribute="EditorHeader" context="EditorialText" String="^### \|(?:EDITOR|PARATEXT|APPENDIX)\| ?$" column="0" beginRegion="editorial"/>
+      <RegExpr attribute="EditorHeader" context="EditorialText" String="&prefixLR;#=\d{12}= \|(?:EDITOR|PARATEXT|APPENDIX)\|?$" column="0" beginRegion="editorial"/>
       <RegExpr attribute="Uri" context="#pop" String="\d\d\d\d[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z\d]+-[a-z]{3}\d+)?)?"/>
       
       <!-- NAMED ENTITIES -->
