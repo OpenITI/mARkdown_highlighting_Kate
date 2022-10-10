@@ -35,29 +35,36 @@
     <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
 
       <!-- HEADERS -->
-      <RegExpr attribute="Header H1" context="#pop" String="&prefixLR;#=\d{12}= \|{1}([^|]+)?$|^\|{1}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H2" context="#pop" String="&prefixLR;#=\d{12}= \|{2}([^|]+)?$|^\|{2}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H3" context="#pop" String="&prefixLR;#=\d{12}= \|{3}([^|]+)?$|^\|{3}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H4" context="#pop" String="&prefixLR;#=\d{12}= \|{4}([^|]+)?$|^\|{4}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H5" context="#pop" String="&prefixLR;#=\d{12}= \|{5}([^|]+)?$|^\|{5}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H6" context="#pop" String="&prefixLR;#=\d{12}= \|{6}([^|]+)?$|^\|{6}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H7" context="#pop" String="&prefixLR;#=\d{12}= \|{7}([^|]+)?$|^\|{7}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H8" context="#pop" String="&prefixLR;#=\d{12}= \|{8}([^|]+)?$|^\|{8}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H9" context="#pop" String="&prefixLR;#=\d{12}= \|{9}([^|]+)?$|^\|{9}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H1" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{1}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H2" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{2}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H3" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{3}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H4" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{4}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H5" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{5}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H6" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{6}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H7" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{7}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H8" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{8}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H9" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{9}([^|]+)?$" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- HEADERS: MIU - BIOGRAPHIES -->
-      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#=\d{12}= \$(BIO_MAN\$)? |^\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#=\d{12}= \$\$(BIO_WOM\$)? |^\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$(BIO_REF\$)? |^\$\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$\$(BIO_NLI\$)? |^\$\$\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#=\d{12}= \$[^$]*?$|^\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_MAN\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#=\d{12}= \$\$([^$]+)?$|^\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_WOM\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$([^$]+)?$|^\$\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_REF\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$\$([^$]+)?$|^\$\$\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_NLI\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="DictionaryItem" context="#pop" String="&prefixLR;#=\d{12}= \$[A-Z]+_[A-Z]+\$[.]+?$" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- HEADERS: MIU - EVENTS -->
       <RegExpr attribute="Event" context="#pop" String="&prefixLR;#=\d{12}= (@|\$CHR_EVE\$)? |^@([^@]+)?$" column="0"/>
 
       <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
       <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
-
-      <RegExpr attribute="DictionaryItem" context="#pop" String="&prefixLR;#=\d{12}= \$[A-Z]+_[A-Z]+\$" column="0"/>
 
       <RegExpr attribute="EditorHeader" context="EditorialText" String="&prefixLR;#=\d{12}= \|(?:EDITOR|PARATEXT|APPENDIX)\|?$" column="0" beginRegion="editorial"/>
       <RegExpr attribute="Uri" context="#pop" String="\d\d\d\d[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z\d]+-[a-z]{3}\d+)?)?"/>
@@ -69,6 +76,8 @@
       <RegExpr attribute="Toponym" context="#pop" String="@t\d\d\b|@T\d1(\W+\w+){1}|@T\d2(\W+\w+){2}|@T\d3(\W+\w+){3}|@T\d4(\W+\w+){4}|@T\d5(\W+\w+){5}|@T\d6(\W+\w+){6}|@T\d7(\W+\w+){7}|@T\d8(\W+\w+){8}|@T\d9(\W+\w+){9}|@T\d10(\W+\w+){10}|@T\d11(\W+\w+){11}|@T\d12(\W+\w+){12}|@T\d13(\W+\w+){13}|@T\d14(\W+\w+){14}|@T\d15(\W+\w+){15}|@T\d16(\W+\w+){16}|@T\d17(\W+\w+){17}|@T\d18(\W+\w+){18}|@T\d19(\W+\w+){19}|@T\d20(\W+\w+){20}|@T\d21(\W+\w+){21}|@T\d22(\W+\w+){22}|@T\d23(\W+\w+){23}|@T\d24(\W+\w+){24}|@T\d25(\W+\w+){25}"/>
 
       <RegExpr attribute="Person" context="#pop" String="@p\d\d\b|@P\d1(\W+\w+){1}|@P\d2(\W+\w+){2}|@P\d3(\W+\w+){3}|@P\d4(\W+\w+){4}|@P\d5(\W+\w+){5}|@P\d6(\W+\w+){6}|@P\d7(\W+\w+){7}|@P\d8(\W+\w+){8}|@P\d9(\W+\w+){9}|@P\d10(\W+\w+){10}|@P\d11(\W+\w+){11}|@P\d12(\W+\w+){12}|@P\d13(\W+\w+){13}|@P\d14(\W+\w+){14}|@P\d15(\W+\w+){15}|@P\d16(\W+\w+){16}|@P\d17(\W+\w+){17}|@P\d18(\W+\w+){18}|@P\d19(\W+\w+){19}|@P\d20(\W+\w+){20}|@P\d21(\W+\w+){21}|@P\d22(\W+\w+){22}|@P\d23(\W+\w+){23}|@P\d24(\W+\w+){24}|@P\d25(\W+\w+){25}"/>
+
+      <RegExpr attribute="Nisbaŧs" context="#pop" String="@n\d\d\b|@N\d1(\W+\w+){1}|@N\d2(\W+\w+){2}|@N\d3(\W+\w+){3}|@N\d4(\W+\w+){4}|@N\d5(\W+\w+){5}|@N\d6(\W+\w+){6}|@N\d7(\W+\w+){7}|@N\d8(\W+\w+){8}|@N\d9(\W+\w+){9}|@N\d10(\W+\w+){10}|@N\d11(\W+\w+){11}|@N\d12(\W+\w+){12}|@N\d13(\W+\w+){13}|@N\d14(\W+\w+){14}|@N\d15(\W+\w+){15}|@N\d16(\W+\w+){16}|@N\d17(\W+\w+){17}|@N\d18(\W+\w+){18}|@N\d19(\W+\w+){19}|@N\d20(\W+\w+){20}|@N\d21(\W+\w+){21}|@N\d22(\W+\w+){22}|@N\d23(\W+\w+){23}|@N\d24(\W+\w+){24}|@N\d25(\W+\w+){25}"/>
 
       <RegExpr attribute="Year" context="#pop" String="@y\d+\b|@Y[A-Z]\d1_\d{1,4}(\W+\w+){1}|@Y[A-Z]\d2_\d{1,4}(\W+\w+){2}|@Y[A-Z]\d3_\d{1,4}(\W+\w+){3}|@Y[A-Z]\d4_\d{1,4}(\W+\w+){4}|@Y[A-Z]\d5_\d{1,4}(\W+\w+){5}|@Y[A-Z]\d6_\d{1,4}(\W+\w+){6}|@Y[A-Z]\d7_\d{1,4}(\W+\w+){7}|@Y[A-Z]\d8_\d{1,4}(\W+\w+){8}|@Y[A-Z]\d9_\d{1,4}(\W+\w+){9}"/>
 
@@ -140,6 +149,7 @@
     <itemData name="NER_AUTO" defStyleNum="dsNormal" color="#000000" backgroundColor="#ABB2B9" bold="true"/>
     <itemData name="Toponym"  defStyleNum="dsNormal" color="#17202A" backgroundColor="#D7BDE2" bold="true"/>
     <itemData name="Person"   defStyleNum="dsNormal" color="#17202A" backgroundColor="#AED6F1" bold="true"/>
+    <itemData name="Nisbaŧs"  defStyleNum="dsNormal" color="#17202A" backgroundColor="#F7DC6F" bold="true"/>
     <itemData name="Year"     defStyleNum="dsNormal" color="#17202A" backgroundColor="#A2D9CE" bold="true"/>
 
 
