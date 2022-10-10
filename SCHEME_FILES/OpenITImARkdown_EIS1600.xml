@@ -58,7 +58,8 @@
       <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$\$([^$]+)?$|^\$\$\$\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
       <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_NLI\$" column="0" endRegion="section" beginRegion="section"/>
 
-      <RegExpr attribute="DictionaryItem" context="#pop" String="&prefixLR;#=\d{12}= \$[A-Z]+_[A-Z]+\$[.]+?$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="DictionaryItem"
+                                  context="#pop" String="&prefixLR;#=\d{12}= \$DIC_[A-Z]{3}\$([^$]+)?$" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- HEADERS: MIU - EVENTS -->
       <RegExpr attribute="Event" context="#pop" String="&prefixLR;#=\d{12}= (@|\$CHR_EVE\$)? |^@([^@]+)?$" column="0"/>
@@ -139,7 +140,7 @@
 
     <itemData name="Event" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#FFD700"/>
     <itemData name="EventList" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#32CD32"/>
-    <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#cccccc" backgroundColor="#800080"/>
+    <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#17202A" backgroundColor="#138D75" bold="true"/>
 
     <itemData name="EditorHeader" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#7B68EE"/>
     <itemData name="Metadata" defStyleNum="dsComment" italic="false"/>
