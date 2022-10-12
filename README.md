@@ -29,3 +29,8 @@
 4. Close Kate and (re-)open it. The OpenITImARkdown highlighting scheme should now be visible in Kate's menu: Tools > Highlighting > Markup
 5. You can test whether it worked by opening the tags_test.mARkdown file in Kate; you should see the highlighting schema in action. 
 
+# Editors: Documentation
+
+## Kate
+
+- Highlighting Scheme Syntax: <https://docs.kde.org/stable5/en/kate/katepart/highlight.html>
