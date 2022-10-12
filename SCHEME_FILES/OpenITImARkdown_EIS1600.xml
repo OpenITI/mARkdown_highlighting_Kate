@@ -60,7 +60,7 @@
                                   context="#pop" String="&prefixLR;#=\d{12}= \$DIC_[A-Z]{3}\$" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- HEADERS: MIU - EVENTS -->
-      <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= )?(@(?![@\w])|(\$CHR_EVE\$)?)|^@(?![@\w])" column="0"/>
+      <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= )?(@(?![@\w])|(\$CHR_EVE\$)?)|^@(?![@\w])" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
       <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
