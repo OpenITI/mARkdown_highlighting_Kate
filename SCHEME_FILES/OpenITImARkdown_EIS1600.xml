@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language name="OpenITImARkdown, EIS1600 flavor" version="1" kateversion="5.0" section="Markup" extensions="*.EIS1600" priority="9" author="Maxim Romanov, EIS1600" license="GPL">
+<language name="OpenITImARkdown, EIS1600 flavor" version="1" kateversion="5.0" section="" extensions="*.EIS1600_temp;*.EIS1600;*.EIS1600TMP" priority="1" author="Maxim Romanov, EIS1600" license="GPL">
 
 <!DOCTYPE language SYSTEM "language.dtd"
 [
