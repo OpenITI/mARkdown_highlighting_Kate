@@ -30,37 +30,37 @@
     <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
 
       <!-- HEADERS -->
-      <RegExpr attribute="Header H1" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{1}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H2" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{2}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H3" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{3}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H4" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{4}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H5" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{5}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H6" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{6}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H7" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{7}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H8" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{8}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="Header H9" context="#pop" String="(&prefixLR;#=\d{12}= )?\|{9}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H1" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{1}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H2" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{2}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H3" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{3}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H4" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{4}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H5" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{5}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H6" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{6}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H7" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{7}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H8" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{8}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H9" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{9}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
 
-      <RegExpr attribute="EditorHeader" context="#pop" String="(&prefixLR;#=\d{12}= )?\|(EDITOR|PARATEXT|APPENDIX)\|(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="EditorHeader" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|(EDITOR|PARATEXT|APPENDIX)\|(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
 
 
       <!-- HEADERS: MIU - BIOGRAPHIES -->
-      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#=\d{12}= \$(?![\$\w])|^\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioMAN" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_MAN\$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioMAN" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioMAN" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_MAN\$" column="0" endRegion="section" beginRegion="section"/>
 
-      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#=\d{12}= \$\$(?![\$\w])|^\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioWOM" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_WOM\$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioWOM" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioWOM" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_WOM\$" column="0" endRegion="section" beginRegion="section"/>
 
-      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$(?![\$\w])|^\$\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioREF" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_REF\$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioREF" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioREF" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_REF\$" column="0" endRegion="section" beginRegion="section"/>
 
-      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$\$\$\$(?![\$\w])|^\$\$\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
-      <RegExpr attribute="BioNLI" context="#pop" String="&prefixLR;#=\d{12}= \$BIO_NLI\$" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioNLI" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$\$\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioNLI" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_NLI\$" column="0" endRegion="section" beginRegion="section"/>
 
       <RegExpr attribute="DictionaryItem"
-                                  context="#pop" String="&prefixLR;#=\d{12}= \$DIC_[A-Z]{3}\$" column="0" endRegion="section" beginRegion="section"/>
+                                  context="#pop" String="(&prefixLR;#=\d{12}= |# )\$DIC_[A-Z]{3}\$" column="0" endRegion="section" beginRegion="section"/>
 
-      <!-- HEADERS: MIU - EVENTS -->
-      <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= )?(@(?![@\w])|(\$CHR_EVE\$)?)|^@(?![@\w])" column="0" endRegion="section" beginRegion="section"/>
+      <!-- HEADERS: MIU - EVENTS :: THIS IS ACTUALLY NOT NECESSARY, SINCE WE CAN USE §§§ AS A PROXY TO A SINGLE EVENT-->
+      <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= |# )(@(?![@\w])|\$CHR_EVE\$)" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
       <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
