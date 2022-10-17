@@ -39,4 +39,14 @@
 
 - there is an issue with the display of Arabic paragraphs when they are selected: the wrong part is highlighted (this issue goes away if you change "direction" of the paragraph by adding a Latin letter in the beginning > highlighting then is correct.)
 
+# EIS1600 Screenshots
+
+![](./IMAGES/eis1600_color1.png)
+
+![](./IMAGES/eis1600_color2.png)
+
+![](./IMAGES/eis1600_color3.png)
+
+![](./IMAGES/eis1600_color4.png)
+
 
