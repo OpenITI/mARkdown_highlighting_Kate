@@ -1,4 +1,4 @@
-# Installing the OpenITI mARkdown Highlighting schema for Kate editor
+# Installing the OpenITI mARkdown EIS1600 mARkdown Highlighting schema for Kate editor
 
 ## GENERAL
 
@@ -38,3 +38,5 @@
 **Issues with highighting scheme in Kate:**
 
 - there is an issue with the display of Arabic paragraphs when they are selected: the wrong part is highlighted (this issue goes away if you change "direction" of the paragraph by adding a Latin letter in the beginning > highlighting then is correct.)
+
+

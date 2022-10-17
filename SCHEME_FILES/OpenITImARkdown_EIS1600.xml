@@ -60,28 +60,43 @@
                                   context="#pop" String="(&prefixLR;#=\d{12}= |# )\$DIC_[A-Z]{3}\$" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- HEADERS: MIU - EVENTS :: THIS IS ACTUALLY NOT NECESSARY, SINCE WE CAN USE §§§ AS A PROXY TO A SINGLE EVENT-->
-      <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= |# )(@(?![@\w])|\$CHR_EVE\$)" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= |# )(@?(?![@?\w])|\$CHR_EVE\$)" column="0" endRegion="section" beginRegion="section"/>
 
       <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
       <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
 
       <RegExpr attribute="Uri" context="#pop" String="\d\d\d\d[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z\d]+-[a-z]{3}\d+)?)?"/>
       
-      <!-- NAMED ENTITIES -->
+      <!-- NAMED ENTITIES:[T]oponyms, [P]ersons, [N]isbaŧ/Descriptor, [Y]ear, [A]ge; the list can be expanded as needed -->
 
-      <RegExpr attribute="NER_AUTO" context="#pop" String="@(TOP|PER|YEA|SOC)\d1(\W+\w+){1}|@(TOP|PER|YEA|SOC)\d2(\W+\w+){2}|@(TOP|PER|YEA|SOC)\d3(\W+\w+){3}|@(TOP|PER|YEA|SOC)\d4(\W+\w+){4}|@(TOP|PER|YEA|SOC)\d5(\W+\w+){5}|@(TOP|PER|YEA|SOC)\d6(\W+\w+){6}|@(TOP|PER|YEA|SOC)\d7(\W+\w+){7}|@(TOP|PER|YEA|SOC)\d8(\W+\w+){8}|@(TOP|PER|YEA|SOC)\d9(\W+\w+){9}|@(TOP|PER|YEA|SOC)\d10(\W+\w+){10}|@(TOP|PER|YEA|SOC)\d11(\W+\w+){11}|@(TOP|PER|YEA|SOC)\d12(\W+\w+){12}|@(TOP|PER|YEA|SOC)\d13(\W+\w+){13}|@(TOP|PER|YEA|SOC)\d14(\W+\w+){14}|@(TOP|PER|YEA|SOC)\d15(\W+\w+){15}|@(TOP|PER|YEA|SOC)\d16(\W+\w+){16}|@(TOP|PER|YEA|SOC)\d17(\W+\w+){17}|@(TOP|PER|YEA|SOC)\d18(\W+\w+){18}|@(TOP|PER|YEA|SOC)\d19(\W+\w+){19}|@(TOP|PER|YEA|SOC)\d20(\W+\w+){20}|@(TOP|PER|YEA|SOC)\d21(\W+\w+){21}|@(TOP|PER|YEA|SOC)\d22(\W+\w+){22}|@(TOP|PER|YEA|SOC)\d23(\W+\w+){23}|@(TOP|PER|YEA|SOC)\d24(\W+\w+){24}|@(TOP|PER|YEA|SOC)\d25(\W+\w+){25}"/>/>
+      <!--
 
-      <RegExpr attribute="Toponym" context="#pop" String="@t\d\d\b|@T\d1(\W+\w+){1}|@T\d2(\W+\w+){2}|@T\d3(\W+\w+){3}|@T\d4(\W+\w+){4}|@T\d5(\W+\w+){5}|@T\d6(\W+\w+){6}|@T\d7(\W+\w+){7}|@T\d8(\W+\w+){8}|@T\d9(\W+\w+){9}|@T\d10(\W+\w+){10}|@T\d11(\W+\w+){11}|@T\d12(\W+\w+){12}|@T\d13(\W+\w+){13}|@T\d14(\W+\w+){14}|@T\d15(\W+\w+){15}|@T\d16(\W+\w+){16}|@T\d17(\W+\w+){17}|@T\d18(\W+\w+){18}|@T\d19(\W+\w+){19}|@T\d20(\W+\w+){20}|@T\d21(\W+\w+){21}|@T\d22(\W+\w+){22}|@T\d23(\W+\w+){23}|@T\d24(\W+\w+){24}|@T\d25(\W+\w+){25}"/>
+          AUTOMATIC: "\b(Ü[A-Z]1([A-Z]\d+[A-Z])?(\W+\w+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(\W+\w+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(\W+\w+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(\W+\w+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(\W+\w+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(\W+\w+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(\W+\w+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(\W+\w+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(\W+\w+){9})\b"
+          TOPONYMS:  "\b(T1[A-Z]?(\W+\w+){1}|T2[A-Z]?(\W+\w+){2}|T3[A-Z]?(\W+\w+){3}|T4[A-Z]?(\W+\w+){4}|T5[A-Z]?(\W+\w+){5}|T6[A-Z]?(\W+\w+){6}|T7[A-Z]?(\W+\w+){7}|T8[A-Z]?(\W+\w+){8}|T9[A-Z]?(\W+\w+){9})\b"
+          PERSONS:   "\b(P1[A-Z]?(\W+\w+){1}|P2[A-Z]?(\W+\w+){2}|P3[A-Z]?(\W+\w+){3}|P4[A-Z]?(\W+\w+){4}|P5[A-Z]?(\W+\w+){5}|P6[A-Z]?(\W+\w+){6}|P7[A-Z]?(\W+\w+){7}|P8[A-Z]?(\W+\w+){8}|P9[A-Z]?(\W+\w+){9})\b"
+          NISBAŦS:   "\b(N1[A-Z]?(\W+\w+){1}|N2[A-Z]?(\W+\w+){2}|N3[A-Z]?(\W+\w+){3}|N4[A-Z]?(\W+\w+){4}|N5[A-Z]?(\W+\w+){5}|N6[A-Z]?(\W+\w+){6}|N7[A-Z]?(\W+\w+){7}|N8[A-Z]?(\W+\w+){8}|N9[A-Z]?(\W+\w+){9})\b"
+          YEAR:      "\b(Y1[A-Z]?([A-Z]\d+Y)?(\W+\w+){1}|Y2[A-Z]?([A-Z]\d+Y)?(\W+\w+){2}|Y3[A-Z]?([A-Z]\d+Y)?(\W+\w+){3}|Y4[A-Z]?([A-Z]\d+Y)?(\W+\w+){4}|Y5[A-Z]?([A-Z]\d+Y)?(\W+\w+){5}|Y6[A-Z]?([A-Z]\d+Y)?(\W+\w+){6}|Y7[A-Z]?([A-Z]\d+Y)?(\W+\w+){7}|Y8[A-Z]?([A-Z]\d+Y)?(\W+\w+){8}|Y9[A-Z]?([A-Z]\d+Y)?(\W+\w+){9})\b"
+          AGE:       "\b(A1[A-Z]?([A-Z]\d+Y)?(\W+\w+){1}|A2[A-Z]?([A-Z]\d+Y)?(\W+\w+){2}|A3[A-Z]?([A-Z]\d+Y)?(\W+\w+){3}|A4[A-Z]?([A-Z]\d+Y)?(\W+\w+){4}|A5[A-Z]?([A-Z]\d+Y)?(\W+\w+){5}|A6[A-Z]?([A-Z]\d+Y)?(\W+\w+){6}|A7[A-Z]?([A-Z]\d+Y)?(\W+\w+){7}|A8[A-Z]?([A-Z]\d+Y)?(\W+\w+){8}|A9[A-Z]?([A-Z]\d+Y)?(\W+\w+){9})\b"
 
-      <RegExpr attribute="Person" context="#pop" String="@p\d\d\b|@P\d1(\W+\w+){1}|@P\d2(\W+\w+){2}|@P\d3(\W+\w+){3}|@P\d4(\W+\w+){4}|@P\d5(\W+\w+){5}|@P\d6(\W+\w+){6}|@P\d7(\W+\w+){7}|@P\d8(\W+\w+){8}|@P\d9(\W+\w+){9}|@P\d10(\W+\w+){10}|@P\d11(\W+\w+){11}|@P\d12(\W+\w+){12}|@P\d13(\W+\w+){13}|@P\d14(\W+\w+){14}|@P\d15(\W+\w+){15}|@P\d16(\W+\w+){16}|@P\d17(\W+\w+){17}|@P\d18(\W+\w+){18}|@P\d19(\W+\w+){19}|@P\d20(\W+\w+){20}|@P\d21(\W+\w+){21}|@P\d22(\W+\w+){22}|@P\d23(\W+\w+){23}|@P\d24(\W+\w+){24}|@P\d25(\W+\w+){25}"/>
+      -->
 
-      <RegExpr attribute="Nisbaŧs" context="#pop" String="@n\d\d\b|@N\d1(\W+\w+){1}|@N\d2(\W+\w+){2}|@N\d3(\W+\w+){3}|@N\d4(\W+\w+){4}|@N\d5(\W+\w+){5}|@N\d6(\W+\w+){6}|@N\d7(\W+\w+){7}|@N\d8(\W+\w+){8}|@N\d9(\W+\w+){9}|@N\d10(\W+\w+){10}|@N\d11(\W+\w+){11}|@N\d12(\W+\w+){12}|@N\d13(\W+\w+){13}|@N\d14(\W+\w+){14}|@N\d15(\W+\w+){15}|@N\d16(\W+\w+){16}|@N\d17(\W+\w+){17}|@N\d18(\W+\w+){18}|@N\d19(\W+\w+){19}|@N\d20(\W+\w+){20}|@N\d21(\W+\w+){21}|@N\d22(\W+\w+){22}|@N\d23(\W+\w+){23}|@N\d24(\W+\w+){24}|@N\d25(\W+\w+){25}"/>
+      <RegExpr attribute="NER_AUTO" context="#pop" String="\b(Ü[A-Z]1([A-Z]\d+[A-Z])?(\W+\w+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(\W+\w+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(\W+\w+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(\W+\w+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(\W+\w+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(\W+\w+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(\W+\w+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(\W+\w+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(\W+\w+){9})\b"/>
 
-      <RegExpr attribute="Year" context="#pop" String="@y\d+\b|@Y[A-Z]\d1_\d{1,4}(\W+\w+){1}|@Y[A-Z]\d2_\d{1,4}(\W+\w+){2}|@Y[A-Z]\d3_\d{1,4}(\W+\w+){3}|@Y[A-Z]\d4_\d{1,4}(\W+\w+){4}|@Y[A-Z]\d5_\d{1,4}(\W+\w+){5}|@Y[A-Z]\d6_\d{1,4}(\W+\w+){6}|@Y[A-Z]\d7_\d{1,4}(\W+\w+){7}|@Y[A-Z]\d8_\d{1,4}(\W+\w+){8}|@Y[A-Z]\d9_\d{1,4}(\W+\w+){9}"/>
+      <RegExpr attribute="Toponym" context="#pop" String="\b(T1[A-Z]?(\W+\w+){1}|T2[A-Z]?(\W+\w+){2}|T3[A-Z]?(\W+\w+){3}|T4[A-Z]?(\W+\w+){4}|T5[A-Z]?(\W+\w+){5}|T6[A-Z]?(\W+\w+){6}|T7[A-Z]?(\W+\w+){7}|T8[A-Z]?(\W+\w+){8}|T9[A-Z]?(\W+\w+){9})\b"/>
+
+      <RegExpr attribute="Person" context="#pop" String="\b(P1[A-Z]?(\W+\w+){1}|P2[A-Z]?(\W+\w+){2}|P3[A-Z]?(\W+\w+){3}|P4[A-Z]?(\W+\w+){4}|P5[A-Z]?(\W+\w+){5}|P6[A-Z]?(\W+\w+){6}|P7[A-Z]?(\W+\w+){7}|P8[A-Z]?(\W+\w+){8}|P9[A-Z]?(\W+\w+){9})\b"/>
+
+      <RegExpr attribute="Book" context="#pop" String="\b(B1[A-Z]?(\W+\w+){1}|B2[A-Z]?(\W+\w+){2}|B3[A-Z]?(\W+\w+){3}|B4[A-Z]?(\W+\w+){4}|B5[A-Z]?(\W+\w+){5}|B6[A-Z]?(\W+\w+){6}|B7[A-Z]?(\W+\w+){7}|B8[A-Z]?(\W+\w+){8}|B9[A-Z]?(\W+\w+){9})\b"/>
+
+      <RegExpr attribute="Nisbaŧs" context="#pop" String="\b(N1[A-Z]?(\W+\w+){1}|N2[A-Z]?(\W+\w+){2}|N3[A-Z]?(\W+\w+){3}|N4[A-Z]?(\W+\w+){4}|N5[A-Z]?(\W+\w+){5}|N6[A-Z]?(\W+\w+){6}|N7[A-Z]?(\W+\w+){7}|N8[A-Z]?(\W+\w+){8}|N9[A-Z]?(\W+\w+){9})\b"/>
+
+      <RegExpr attribute="Year" context="#pop" String="\b(Y1[A-Z]?([A-Z]\d+Y)?(\W+\w+){1}|Y2[A-Z]?([A-Z]\d+Y)?(\W+\w+){2}|Y3[A-Z]?([A-Z]\d+Y)?(\W+\w+){3}|Y4[A-Z]?([A-Z]\d+Y)?(\W+\w+){4}|Y5[A-Z]?([A-Z]\d+Y)?(\W+\w+){5}|Y6[A-Z]?([A-Z]\d+Y)?(\W+\w+){6}|Y7[A-Z]?([A-Z]\d+Y)?(\W+\w+){7}|Y8[A-Z]?([A-Z]\d+Y)?(\W+\w+){8}|Y9[A-Z]?([A-Z]\d+Y)?(\W+\w+){9})\b"/>
+
+      <RegExpr attribute="Age" context="#pop" String="\b(A1[A-Z]?([A-Z]\d+Y)?(\W+\w+){1}|A2[A-Z]?([A-Z]\d+Y)?(\W+\w+){2}|A3[A-Z]?([A-Z]\d+Y)?(\W+\w+){3}|A4[A-Z]?([A-Z]\d+Y)?(\W+\w+){4}|A5[A-Z]?([A-Z]\d+Y)?(\W+\w+){5}|A6[A-Z]?([A-Z]\d+Y)?(\W+\w+){6}|A7[A-Z]?([A-Z]\d+Y)?(\W+\w+){7}|A8[A-Z]?([A-Z]\d+Y)?(\W+\w+){8}|A9[A-Z]?([A-Z]\d+Y)?(\W+\w+){9})\b"/>
 
       <RegExpr attribute="InText_Pages" context="#pop" String="(Beg|End)?V[^P]+P\d+|(Page)?V[^P]+P\d+"/>
       <RegExpr attribute="InText_Milestones" context="#pop" String="ms\d+"/>
-      <RegExpr attribute="InText_Numbers" context="#pop" String="\d+"/>
+      <RegExpr attribute="InText_Numbers" context="#pop" String="\b\d+\b|&prefixLR;"/>
       <RegExpr attribute="InText_NonLetters" context="#pop" String="[.;?,:،؛؟()[\]]"/>
       <StringDetect attribute="InText_Poetry" context="#pop" String="%~%"/>
 
@@ -91,7 +106,8 @@
 
   <itemDatas>
 
-    <itemData name="Normal Text" defStyleNum="dsNormal" color="#2C3E50" selColor="FFFFFF"/>
+    <itemData name="Normal Text" defStyleNum="dsNormal"/>
+    <!-- <itemData name="Normal Text" defStyleNum="dsNormal" color="#2C3E50" selColor="FFFFFF"/> -->
     <itemData name="Uri" defStyleNum="dsNormal" color="#26A69A" selColor="#26A69A"/>
 
     <!--
@@ -133,11 +149,14 @@
     <itemData name="Editor" defStyleNum="dsComment"/>
 
     <!-- NAMED ENTITIES -->
-    <itemData name="NER_AUTO" defStyleNum="dsNormal" color="#ABB2B9" selColor="#ABB2B9" underline="true" bold="true"/>
-    <itemData name="Toponym"  defStyleNum="dsNormal" color="#8E24AA" underline="true" bold="true"/>
-    <itemData name="Person"   defStyleNum="dsNormal" color="#0288D1" underline="true" bold="true"/>
-    <itemData name="Nisbaŧs"  defStyleNum="dsNormal" color="#AFB42B" underline="true" bold="true"/>
-    <itemData name="Year"     defStyleNum="dsNormal" color="#00796B" underline="true" bold="true"/>
+    <itemData name="NER_AUTO" defStyleNum="dsNormal" color="#330066" selColor="#330066" underline="true" bold="true"/>
+    <itemData name="Toponym"  defStyleNum="dsNormal" color="#8E24AA" selColor="#8E24AA" underline="true" bold="true"/>
+    <itemData name="Person"   defStyleNum="dsNormal" color="#0288D1" selColor="#0288D1" underline="true" bold="true"/>
+    <itemData name="Book"     defStyleNum="dsNormal" color="#BF360C" selColor="#BF360C" underline="true" bold="true"/>
+    <itemData name="Nisbaŧs"  defStyleNum="dsNormal" color="#AFB42B" selColor="#AFB42B" underline="true" bold="true"/>
+    <itemData name="Year"     defStyleNum="dsNormal" color="#00796B" selColor="#00796B" underline="true" bold="true"/>
+    <itemData name="Age"      defStyleNum="dsNormal" color="#00695C" selColor="#00695C" underline="true" bold="true"/>
+
 
 
  </itemDatas>
