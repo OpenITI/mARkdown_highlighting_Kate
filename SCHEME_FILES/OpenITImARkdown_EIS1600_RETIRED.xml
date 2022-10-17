@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language name="OpenITImARkdown, EIS1600 flavor" version="1" kateversion="5.0" section="" extensions="*.EIS1600_temp;*.EIS1600;*.EIS1600TMP" priority="1" author="Maxim Romanov, EIS1600" license="GPL">
+<language name="OpenITImARkdown, EIS1600 flavor (BG COL)" version="1" kateversion="5.0" section="" extensions="*.EIS1600_temp;*.EIS1600;*.EIS1600TMP" priority="5" author="Maxim Romanov, EIS1600" license="GPL">
 
 <!DOCTYPE language SYSTEM "language.dtd"
 [
@@ -91,8 +91,8 @@
 
   <itemDatas>
 
-    <itemData name="Normal Text" defStyleNum="dsNormal" color="#2C3E50" selColor="FFFFFF"/>
-    <itemData name="Uri" defStyleNum="dsNormal" color="#26A69A" selColor="#26A69A"/>
+    <itemData name="Normal Text" defStyleNum="dsNormal" color="#2C3E50" colorSelected="FFFFFF"/>
+    <itemData name="Uri" defStyleNum="dsNormal" backgroundColor="#90EE90"/>
 
     <!--
     <itemData name="Milestone" defStyleNum="dsNormal" color="#F4D03F" backgroundColor="#1A5276" bold="true"/>
@@ -100,44 +100,44 @@
     <itemData name="Poetry" defStyleNum="dsNormal" color="#fafad2" backgroundColor="#C39BD3" bold="true"/>
     -->
 
-    <itemData name="InText_Pages"      defStyleNum="dsNormal" color="#B0BEC5" bold="false"/>
-    <itemData name="InText_Poetry"     defStyleNum="dsNormal" color="#6C3483" bold="true"/>
-    <itemData name="InText_Milestones" defStyleNum="dsNormal" color="#C0392B" bold="false"/>
-    <itemData name="InText_Numbers"    defStyleNum="dsNormal" color="#37474F" bold="true"/>
-    <itemData name="InText_NonLetters" defStyleNum="dsNormal" color="#566573" bold="true"/>
+    <itemData name="InText_Pages" defStyleNum="dsNormal" color="#FDFEFE" backgroundColor="#ABB2B9" bold="true"/>
+    <itemData name="InText_Poetry" defStyleNum="dsNormal" color="#6C3483" backgroundColor="#ABB2B9" bold="true"/>
+    <itemData name="InText_Milestones" defStyleNum="dsNormal" color="#C0392B" backgroundColor="#ABB2B9" bold="true"/>
+    <itemData name="InText_Numbers" defStyleNum="dsNormal" color="#FDFEFE" backgroundColor="#ABB2B9" bold="true"/>
+    <itemData name="InText_NonLetters" defStyleNum="dsNormal" color="#566573" backgroundColor="#EAECEE" bold="true"/>
 
-    <itemData name="Header H1" defStyleNum="dsNormal" color="#D32F2F" selColor="#D32F2F" bold="true"/>
-    <itemData name="Header H2" defStyleNum="dsNormal" color="#E64A19" selColor="#E64A19" bold="true"/>
-    <itemData name="Header H3" defStyleNum="dsNormal" color="#FBC02D" selColor="#FBC02D" bold="true"/>
-    <itemData name="Header H4" defStyleNum="dsNormal" color="#388E3C" selColor="#388E3C" bold="true"/>
-    <itemData name="Header H5" defStyleNum="dsNormal" color="#1976D2" selColor="#1976D2" bold="true"/>
-    <itemData name="Header H6" defStyleNum="dsNormal" color="#303F9F" selColor="#303F9F" bold="true"/>
-    <itemData name="Header H7" defStyleNum="dsNormal" color="#7B1FA2" selColor="#7B1FA2" bold="true"/>
-    <itemData name="Header H8" defStyleNum="dsNormal" color="#880E4F" selColor="#880E4F" bold="true"/>
-    <itemData name="Header H9" defStyleNum="dsNormal" color="#880E4F" selColor="#880E4F" bold="true"/>
+    <itemData name="Header H1" defStyleNum="dsNormal" color="#273746" backgroundColor="#E6B0AA" bold="true"/>
+    <itemData name="Header H2" defStyleNum="dsNormal" color="#273746" backgroundColor="#EDBB99" bold="true"/>
+    <itemData name="Header H3" defStyleNum="dsNormal" color="#273746" backgroundColor="#F9E79F" bold="true"/>
+    <itemData name="Header H4" defStyleNum="dsNormal" color="#273746" backgroundColor="#ABEBC6" bold="true"/>
+    <itemData name="Header H5" defStyleNum="dsNormal" color="#273746" backgroundColor="#AED6F1" bold="true"/>
+    <itemData name="Header H6" defStyleNum="dsNormal" color="#273746" backgroundColor="#5499C7" bold="true"/>
+    <itemData name="Header H7" defStyleNum="dsNormal" color="#273746" backgroundColor="#D7BDE2" bold="true"/>
+    <itemData name="Header H8" defStyleNum="dsNormal" color="#273746" backgroundColor="#AAB7B8" bold="true"/>
+    <itemData name="Header H9" defStyleNum="dsNormal" color="#273746" backgroundColor="#AAB7B8" bold="true"/>
     
 
-    <itemData name="MORPHO" defStyleNum="dsNormal" color="#FFB74D" selColor="#FFB74D" bold="true"/>
+    <itemData name="MORPHO" defStyleNum="dsNormal" color="#566573" backgroundColor="#F6DDCC" bold="true"/>
 
-    <itemData name="BioMAN" defStyleNum="dsNormal" color="#138D75" selColor="#138D75" bold="true"/>
-    <itemData name="BioWOM" defStyleNum="dsNormal" color="#800080" selColor="#800080" bold="true"/>
-    <itemData name="BioREF" defStyleNum="dsNormal" color="#FFD700" selColor="#FFD700" bold="true"/>
-    <itemData name="BioNLI" defStyleNum="dsNormal" color="#32CD32" selColor="#32CD32" bold="true"/>
+    <itemData name="BioMAN" defStyleNum="dsNormal" color="#17202A" backgroundColor="#138D75" bold="true"/>
+    <itemData name="BioWOM" defStyleNum="dsNormal" color="#17202A" backgroundColor="#800080" bold="true"/>
+    <itemData name="BioREF" defStyleNum="dsNormal" color="#17202A" backgroundColor="#FFD700" bold="true"/>
+    <itemData name="BioNLI" defStyleNum="dsNormal" color="#17202A" backgroundColor="#32CD32" bold="true"/>
 
-    <itemData name="Event" defStyleNum="dsNormal" color="#FFD700"/>
-    <itemData name="EventList" defStyleNum="dsNormal" color="#32CD32"/>
-    <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#138D75" bold="true"/>
+    <itemData name="Event" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#FFD700"/>
+    <itemData name="EventList" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#32CD32"/>
+    <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#17202A" backgroundColor="#138D75" bold="true"/>
 
-    <itemData name="EditorHeader" defStyleNum="dsNormal" color="#7B68EE" bold="true"/>
+    <itemData name="EditorHeader" defStyleNum="dsNormal" color="#ffffff" backgroundColor="#7B68EE"/>
     <itemData name="Metadata" defStyleNum="dsComment" italic="false"/>
     <itemData name="Editor" defStyleNum="dsComment"/>
 
     <!-- NAMED ENTITIES -->
-    <itemData name="NER_AUTO" defStyleNum="dsNormal" color="#ABB2B9" selColor="#ABB2B9" underline="true" bold="true"/>
-    <itemData name="Toponym"  defStyleNum="dsNormal" color="#8E24AA" underline="true" bold="true"/>
-    <itemData name="Person"   defStyleNum="dsNormal" color="#0288D1" underline="true" bold="true"/>
-    <itemData name="Nisbaŧs"  defStyleNum="dsNormal" color="#AFB42B" underline="true" bold="true"/>
-    <itemData name="Year"     defStyleNum="dsNormal" color="#00796B" underline="true" bold="true"/>
+    <itemData name="NER_AUTO" defStyleNum="dsNormal" color="#000000" backgroundColor="#ABB2B9" bold="true"/>
+    <itemData name="Toponym"  defStyleNum="dsNormal" color="#17202A" backgroundColor="#D7BDE2" bold="true"/>
+    <itemData name="Person"   defStyleNum="dsNormal" color="#17202A" backgroundColor="#AED6F1" bold="true"/>
+    <itemData name="Nisbaŧs"  defStyleNum="dsNormal" color="#17202A" backgroundColor="#F7DC6F" bold="true"/>
+    <itemData name="Year"     defStyleNum="dsNormal" color="#17202A" backgroundColor="#A2D9CE" bold="true"/>
 
 
  </itemDatas>

@@ -2,8 +2,8 @@
 
 ## GENERAL
 
-- The highlighting schemas work best with the theme `Atom One Light`
-	- `Preferences` > `Colore Schemes` > `Select Scheme`: `Atom One Light`
+- the EIS1600 scheme does not use "background colors", since they get in the way of using color themes (dark ones are completely unusable);
+- selection colors are fixed (add `selColor="#XXXXXX"` after `color="#XXXXXX"`);
 
 ## On Mac:
 
