@@ -34,3 +34,7 @@
 ## Kate
 
 - Highlighting Scheme Syntax: <https://docs.kde.org/stable5/en/kate/katepart/highlight.html>
+
+**Issues with highighting scheme in Kate:**
+
+- there is an issue with the display of Arabic paragraphs when they are selected: the wrong part is highlighted (this issue goes away if you change "direction" of the paragraph by adding a Latin letter in the beginning > highlighting then is correct.)
