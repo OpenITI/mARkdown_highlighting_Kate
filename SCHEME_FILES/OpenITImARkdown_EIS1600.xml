@@ -4,6 +4,7 @@
 <!DOCTYPE language SYSTEM "language.dtd"
 [
   <!ENTITY prefixLR "_[ءة]_">
+  <!ENTITY arabicChars "[أدثسءزضلصگكٱآبڤرىطفهيپؤخإظغتةنـذعحائوجمقشچ]">
 
   <!ENTITY red      "#E74C3C">
   <!ENTITY orange   "#E59866">
@@ -85,19 +86,19 @@
 
       -->
 
-      <RegExpr attribute="NER_AUTO" context="#stay" String="(Ü[A-Z]1([A-Z]\d+[A-Z])?(\s\p{Arabic}+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(\s\p{Arabic}+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(\s\p{Arabic}+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(\s\p{Arabic}+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(\s\p{Arabic}+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(\s\p{Arabic}+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(\s\p{Arabic}+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(\s\p{Arabic}+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(\s\p{Arabic}+){9})"/>
+      <RegExpr attribute="NER_AUTO" context="#stay" String="(Ü[A-Z]1([A-Z]\d+[A-Z])?(\s&arabicChars;+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(\s&arabicChars;+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(\s&arabicChars;+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(\s&arabicChars;+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(\s&arabicChars;+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(\s&arabicChars;+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(\s&arabicChars;+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(\s&arabicChars;+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(\s&arabicChars;+){9})"/>
 
-      <RegExpr attribute="Toponym" context="#stay" String="(T1[A-Z]?(\s\p{Arabic}+){1}|T2[A-Z]?(\s\p{Arabic}+){2}|T3[A-Z]?(\s\p{Arabic}+){3}|T4[A-Z]?(\s\p{Arabic}+){4}|T5[A-Z]?(\s\p{Arabic}+){5}|T6[A-Z]?(\s\p{Arabic}+){6}|T7[A-Z]?(\s\p{Arabic}+){7}|T8[A-Z]?(\s\p{Arabic}+){8}|T9[A-Z]?(\s\p{Arabic}+){9})"/>
+      <RegExpr attribute="Toponym" context="#stay" String="(T1[A-Z]?(\s&arabicChars;+){1}|T2[A-Z]?(\s&arabicChars;+){2}|T3[A-Z]?(\s&arabicChars;+){3}|T4[A-Z]?(\s&arabicChars;+){4}|T5[A-Z]?(\s&arabicChars;+){5}|T6[A-Z]?(\s&arabicChars;+){6}|T7[A-Z]?(\s&arabicChars;+){7}|T8[A-Z]?(\s&arabicChars;+){8}|T9[A-Z]?(\s&arabicChars;+){9})"/>
 
-      <RegExpr attribute="Person" context="#stay" weakDeliminator="\r" String="(P1[A-Z]?(\s\p{Arabic}+){1}|P2[A-Z]?(\s\p{Arabic}+){2}|P3[A-Z]?(\s\p{Arabic}+){3}|P4[A-Z]?(\s\p{Arabic}+){4}|P5[A-Z]?(\s\p{Arabic}+){5}|P6[A-Z]?(\s\p{Arabic}+){6}|P7[A-Z]?(\s\p{Arabic}+){7}|P8[A-Z]?(\s\p{Arabic}+){8}|P9[A-Z]?(\s\p{Arabic}+){9})"/>
+      <RegExpr attribute="Person" context="#stay" weakDeliminator="\r" String="(P1[A-Z]?(\s&arabicChars;+){1}|P2[A-Z]?(\s&arabicChars;+){2}|P3[A-Z]?(\s&arabicChars;+){3}|P4[A-Z]?(\s&arabicChars;+){4}|P5[A-Z]?(\s&arabicChars;+){5}|P6[A-Z]?(\s&arabicChars;+){6}|P7[A-Z]?(\s&arabicChars;+){7}|P8[A-Z]?(\s&arabicChars;+){8}|P9[A-Z]?(\s&arabicChars;+){9})"/>
 
-      <RegExpr attribute="Book" context="#stay" String="(B1[A-Z]?(\s\p{Arabic}+){1}|B2[A-Z]?(\s\p{Arabic}+){2}|B3[A-Z]?(\s\p{Arabic}+){3}|B4[A-Z]?(\s\p{Arabic}+){4}|B5[A-Z]?(\s\p{Arabic}+){5}|B6[A-Z]?(\s\p{Arabic}+){6}|B7[A-Z]?(\s\p{Arabic}+){7}|B8[A-Z]?(\s\p{Arabic}+){8}|B9[A-Z]?(\s\p{Arabic}+){9})"/>
+      <RegExpr attribute="Book" context="#stay" String="(B1[A-Z]?(\s&arabicChars;+){1}|B2[A-Z]?(\s&arabicChars;+){2}|B3[A-Z]?(\s&arabicChars;+){3}|B4[A-Z]?(\s&arabicChars;+){4}|B5[A-Z]?(\s&arabicChars;+){5}|B6[A-Z]?(\s&arabicChars;+){6}|B7[A-Z]?(\s&arabicChars;+){7}|B8[A-Z]?(\s&arabicChars;+){8}|B9[A-Z]?(\s&arabicChars;+){9})"/>
 
-      <RegExpr attribute="Nisbaŧs" context="#stay" String="(N1[A-Z]?(\s\p{Arabic}+){1}|N2[A-Z]?(\s\p{Arabic}+){2}|N3[A-Z]?(\s\p{Arabic}+){3}|N4[A-Z]?(\s\p{Arabic}+){4}|N5[A-Z]?(\s\p{Arabic}+){5}|N6[A-Z]?(\s\p{Arabic}+){6}|N7[A-Z]?(\s\p{Arabic}+){7}|N8[A-Z]?(\s\p{Arabic}+){8}|N9[A-Z]?(\s\p{Arabic}+){9})"/>
+      <RegExpr attribute="Nisbaŧs" context="#stay" String="(N1[A-Z]?(\s&arabicChars;+){1}|N2[A-Z]?(\s&arabicChars;+){2}|N3[A-Z]?(\s&arabicChars;+){3}|N4[A-Z]?(\s&arabicChars;+){4}|N5[A-Z]?(\s&arabicChars;+){5}|N6[A-Z]?(\s&arabicChars;+){6}|N7[A-Z]?(\s&arabicChars;+){7}|N8[A-Z]?(\s&arabicChars;+){8}|N9[A-Z]?(\s&arabicChars;+){9})"/>
 
-      <RegExpr attribute="Year" context="#stay" String="(Y1[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){1}|Y2[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){2}|Y3[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){3}|Y4[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){4}|Y5[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){5}|Y6[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){6}|Y7[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){7}|Y8[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){8}|Y9[A-Z]?([A-Z]\d+Y)?(\s\p{Arabic}+){9})"/>
+      <RegExpr attribute="Year" context="#stay" String="(Y1[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){1}|Y2[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){2}|Y3[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){3}|Y4[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){4}|Y5[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){5}|Y6[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){6}|Y7[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){7}|Y8[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){8}|Y9[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){9})"/>
 
-      <RegExpr attribute="Age" context="#stay" String="(A1[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){1}|A2[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){2}|A3[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){3}|A4[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){4}|A5[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){5}|A6[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){6}|A7[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){7}|A8[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){8}|A9[A-Z]?([A-Z]\d+A)?(\s\p{Arabic}+){9})"/>
+      <RegExpr attribute="Age" context="#stay" String="(A1[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){1}|A2[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){2}|A3[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){3}|A4[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){4}|A5[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){5}|A6[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){6}|A7[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){7}|A8[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){8}|A9[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){9})"/>
 
 
       <!-- SOME TEMPORARY ENTITIES: for 1339IsmacilBashaBaghdadi.HadiyaCarifin Analysis [476129001621]-->
