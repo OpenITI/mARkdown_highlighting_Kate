@@ -21,14 +21,22 @@
   <list>
   </list>
   <contexts>
+
+    <!--
     <context name="Start Document" attribute="Normal Text" lineEndContext="Body" lineEmptyContext="Body" fallthroughContext="Body">
       <RegExpr attribute="Metadata" context="MetadataText" String="######OpenITI#" column="0" beginRegion="metadata"/>
     </context>
     <context name="MetadataText" attribute="Metadata" lineEndContext="#stay">
       <StringDetect attribute="Metadata" context="#pop!Body" fallthroughContext="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
     </context>
+    -->
+
 
     <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
+
+      <!-- METADATA HEADERS 0-->
+      <RegExpr attribute="MetadataHeaders" context="#pop" String="######OpenITI#|#META#Header#End#|#MIU#Header#(Begin|End)#" column="0" endRegion="section" beginRegion="section"/>
+      
 
       <!-- HEADERS -->
       <RegExpr attribute="Header H1" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{1}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
@@ -160,6 +168,7 @@
 
     <itemData name="EditorHeader" defStyleNum="dsNormal" color="#7B68EE" bold="true"/>
     <itemData name="Metadata" defStyleNum="dsComment" italic="false"/>
+    <itemData name="MetadataHeaders" defStyleNum="dsComment" italic="false"/>
     <itemData name="Editor" defStyleNum="dsComment"/>
 
     <!-- NAMED ENTITIES -->
