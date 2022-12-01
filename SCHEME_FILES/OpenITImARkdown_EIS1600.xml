@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language name="OpenITImARkdown, EIS1600 flavor" version="1" kateversion="5.0" section="" extensions="*.EIS1600_temp;*.EIS1600;*.EIS1600TMP;*.INDICES" priority="1" author="Maxim Romanov, EIS1600" license="GPL">
+
+<!DOCTYPE language SYSTEM "language.dtd"
+[
+  <!ENTITY prefixLR "_[ءة]_">
+  <!ENTITY arabicChars "[أدثسءزضلصگكٱآبڤرىطفهيپؤخإظغتةنـذعحائوجمقشچ]">
+
+  <!ENTITY red      "#E74C3C">
+  <!ENTITY orange   "#E59866">
+  <!ENTITY yellow   "#F7DC6F">
+  <!ENTITY green    "#7DCEA0">
+  <!ENTITY blueLite "#85C1E9">
+  <!ENTITY blueDark "#3498DB">
+  <!ENTITY violet   "#BB8FCE">
+
+]
+>
+
+<highlighting>
+  <list>
+  </list>
+  <contexts>
+    <context name="Start Document" attribute="Normal Text" lineEndContext="Body" lineEmptyContext="Body" fallthroughContext="Body">
+      <RegExpr attribute="Metadata" context="MetadataText" String="######OpenITI#" column="0" beginRegion="metadata"/>
+    </context>
+    <context name="MetadataText" attribute="Metadata" lineEndContext="#stay">
+      <StringDetect attribute="Metadata" context="#pop!Body" fallthroughContext="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
+    </context>
+
+    <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
+
+      <!-- HEADERS -->
+      <RegExpr attribute="Header H1" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{1}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H2" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{2}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H3" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{3}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H4" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{4}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H5" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{5}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H6" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{6}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H7" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{7}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H8" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{8}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="Header H9" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{9}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="EditorHeader" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|(EDITOR|PARATEXT|APPENDIX)\|(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
+
+      <!-- THIS IS JUST FOR INDICES -->
+      <RegExpr attribute="EditorHeader" context="#pop" String="# \|(PERSONS|TOPONYMS|BOOKS|INSTITUTIONS|MISC)\| (-[A-Z]+-)?" column="0" endRegion="section" beginRegion="section"/>
+
+
+      <!-- HEADERS: MIU - BIOGRAPHIES -->
+      <RegExpr attribute="BioMAN" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioMAN" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_MAN\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="BioWOM" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioWOM" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_WOM\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="BioREF" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioREF" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_REF\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="BioNLI" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$\$\$\$(?![\$\w])" column="0" endRegion="section" beginRegion="section"/>
+      <RegExpr attribute="BioNLI" context="#pop" String="(&prefixLR;#=\d{12}= |# )\$BIO_NLI\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <RegExpr attribute="DictionaryItem"
+                                  context="#pop" String="(&prefixLR;#=\d{12}= |# )\$DIC_[A-Z]{3}\$" column="0" endRegion="section" beginRegion="section"/>
+
+      <!-- HEADERS: MIU - EVENTS :: THIS IS ACTUALLY NOT NECESSARY, SINCE WE CAN USE §§§ AS A PROXY TO A SINGLE EVENT-->
+      <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= |# )(@?(?![@?\w])|\$CHR_EVE\$)" column="0" endRegion="section" beginRegion="section"/>
+
+      <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
+      <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
+      <RegExpr attribute="MORPHO_CAMeL" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+_CAMeL:: )+~" column="0"/>
+
+
+      <RegExpr attribute="Uri" context="#pop" String="\d\d\d\d[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z\d]+-[a-z]{3}\d+)?)?"/>
+      
+      <!-- NAMED ENTITIES:[T]oponyms, [P]ersons, [N]isbaŧ/Descriptor, [Y]ear, [A]ge; the list can be expanded as needed -->
+
+      <!--
+
+          AUTOMATIC: "\b(Ü[A-Z]1([A-Z]\d+[A-Z])?(\W+\w+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(\W+\w+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(\W+\w+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(\W+\w+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(\W+\w+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(\W+\w+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(\W+\w+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(\W+\w+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(\W+\w+){9})\b"
+          TOPONYMS:  "\b(T1[A-Z]?(\W+\w+){1}|T2[A-Z]?(\W+\w+){2}|T3[A-Z]?(\W+\w+){3}|T4[A-Z]?(\W+\w+){4}|T5[A-Z]?(\W+\w+){5}|T6[A-Z]?(\W+\w+){6}|T7[A-Z]?(\W+\w+){7}|T8[A-Z]?(\W+\w+){8}|T9[A-Z]?(\W+\w+){9})\b"
+          PERSONS:   "\b(P1[A-Z]?(\W+\w+){1}|P2[A-Z]?(\W+\w+){2}|P3[A-Z]?(\W+\w+){3}|P4[A-Z]?(\W+\w+){4}|P5[A-Z]?(\W+\w+){5}|P6[A-Z]?(\W+\w+){6}|P7[A-Z]?(\W+\w+){7}|P8[A-Z]?(\W+\w+){8}|P9[A-Z]?(\W+\w+){9})\b"
+          NISBAŦS:   "\b(N1[A-Z]?(\W+\w+){1}|N2[A-Z]?(\W+\w+){2}|N3[A-Z]?(\W+\w+){3}|N4[A-Z]?(\W+\w+){4}|N5[A-Z]?(\W+\w+){5}|N6[A-Z]?(\W+\w+){6}|N7[A-Z]?(\W+\w+){7}|N8[A-Z]?(\W+\w+){8}|N9[A-Z]?(\W+\w+){9})\b"
+          YEAR:      "\b(Y1[A-Z]?([A-Z]\d+Y)?(\W+\w+){1}|Y2[A-Z]?([A-Z]\d+Y)?(\W+\w+){2}|Y3[A-Z]?([A-Z]\d+Y)?(\W+\w+){3}|Y4[A-Z]?([A-Z]\d+Y)?(\W+\w+){4}|Y5[A-Z]?([A-Z]\d+Y)?(\W+\w+){5}|Y6[A-Z]?([A-Z]\d+Y)?(\W+\w+){6}|Y7[A-Z]?([A-Z]\d+Y)?(\W+\w+){7}|Y8[A-Z]?([A-Z]\d+Y)?(\W+\w+){8}|Y9[A-Z]?([A-Z]\d+Y)?(\W+\w+){9})\b"
+          AGE:       "\b(A1[A-Z]?([A-Z]\d+Y)?(\W+\w+){1}|A2[A-Z]?([A-Z]\d+Y)?(\W+\w+){2}|A3[A-Z]?([A-Z]\d+Y)?(\W+\w+){3}|A4[A-Z]?([A-Z]\d+Y)?(\W+\w+){4}|A5[A-Z]?([A-Z]\d+Y)?(\W+\w+){5}|A6[A-Z]?([A-Z]\d+Y)?(\W+\w+){6}|A7[A-Z]?([A-Z]\d+Y)?(\W+\w+){7}|A8[A-Z]?([A-Z]\d+Y)?(\W+\w+){8}|A9[A-Z]?([A-Z]\d+Y)?(\W+\w+){9})\b"
+
+      -->
+
+      <RegExpr attribute="NER_AUTO" context="#stay" String="(Ü[A-Z]1([A-Z]\d+[A-Z])?(\s&arabicChars;+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(\s&arabicChars;+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(\s&arabicChars;+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(\s&arabicChars;+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(\s&arabicChars;+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(\s&arabicChars;+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(\s&arabicChars;+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(\s&arabicChars;+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(\s&arabicChars;+){9})"/>
+
+      <RegExpr attribute="Toponym" context="#stay" String="(T1[A-Z]?(\s&arabicChars;+){1}|T2[A-Z]?(\s&arabicChars;+){2}|T3[A-Z]?(\s&arabicChars;+){3}|T4[A-Z]?(\s&arabicChars;+){4}|T5[A-Z]?(\s&arabicChars;+){5}|T6[A-Z]?(\s&arabicChars;+){6}|T7[A-Z]?(\s&arabicChars;+){7}|T8[A-Z]?(\s&arabicChars;+){8}|T9[A-Z]?(\s&arabicChars;+){9})"/>
+
+      <RegExpr attribute="Person" context="#stay" weakDeliminator="\r" String="(P1[A-Z]?(\s&arabicChars;+){1}|P2[A-Z]?(\s&arabicChars;+){2}|P3[A-Z]?(\s&arabicChars;+){3}|P4[A-Z]?(\s&arabicChars;+){4}|P5[A-Z]?(\s&arabicChars;+){5}|P6[A-Z]?(\s&arabicChars;+){6}|P7[A-Z]?(\s&arabicChars;+){7}|P8[A-Z]?(\s&arabicChars;+){8}|P9[A-Z]?(\s&arabicChars;+){9})"/>
+
+      <RegExpr attribute="Book" context="#stay" String="(B1[A-Z]?(\s&arabicChars;+){1}|B2[A-Z]?(\s&arabicChars;+){2}|B3[A-Z]?(\s&arabicChars;+){3}|B4[A-Z]?(\s&arabicChars;+){4}|B5[A-Z]?(\s&arabicChars;+){5}|B6[A-Z]?(\s&arabicChars;+){6}|B7[A-Z]?(\s&arabicChars;+){7}|B8[A-Z]?(\s&arabicChars;+){8}|B9[A-Z]?(\s&arabicChars;+){9})"/>
+
+      <RegExpr attribute="Nisbaŧs" context="#stay" String="(N1[A-Z]?(\s&arabicChars;+){1}|N2[A-Z]?(\s&arabicChars;+){2}|N3[A-Z]?(\s&arabicChars;+){3}|N4[A-Z]?(\s&arabicChars;+){4}|N5[A-Z]?(\s&arabicChars;+){5}|N6[A-Z]?(\s&arabicChars;+){6}|N7[A-Z]?(\s&arabicChars;+){7}|N8[A-Z]?(\s&arabicChars;+){8}|N9[A-Z]?(\s&arabicChars;+){9})"/>
+
+      <RegExpr attribute="Year" context="#stay" String="(Y1[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){1}|Y2[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){2}|Y3[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){3}|Y4[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){4}|Y5[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){5}|Y6[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){6}|Y7[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){7}|Y8[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){8}|Y9[A-Z]?([A-Z]\d+Y)?(\s&arabicChars;+){9})"/>
+
+      <RegExpr attribute="Age" context="#stay" String="(A1[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){1}|A2[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){2}|A3[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){3}|A4[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){4}|A5[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){5}|A6[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){6}|A7[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){7}|A8[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){8}|A9[A-Z]?([A-Z]\d+A)?(\s&arabicChars;+){9})"/>
+
+
+      <!-- SOME TEMPORARY ENTITIES: for 1339IsmacilBashaBaghdadi.HadiyaCarifin Analysis [476129001621]-->
+      <RegExpr attribute="Provinces" context="#pop" String="\b(AND|MGR|IFR|BRQ|MSR|RUM|SAM|HJZ|YMN|CMN|CRQ|AQR|RHB|JBL|FRS|SJS|HND|KHR|KHW|MWN|EUR|AFR|ITL|QRM|ITL)(\W+\w+){1}\b"/>
+      <RegExpr attribute="Keywords"  context="#pop" String="\b(W1[A-Z]?([A-Z]\d+A)?(\W+\w+){1}|W2[A-Z]?([A-Z]\d+A)?(\W+\w+){2}|W3[A-Z]?([A-Z]\d+A)?(\W+\w+){3})\b"/>
+      <RegExpr attribute="Temp Tag"  context="#pop" String="§§§"/>
+
+
+      <RegExpr attribute="InText_Pages" context="#pop" String="(Beg|End)?V[^P]+P\d+|(Page)?V[^P]+P\d+"/>
+      <RegExpr attribute="InText_Milestones" context="#pop" String="ms\d+"/>
+      <RegExpr attribute="InText_Numbers" context="#pop" String="\b\d+\b|&prefixLR;"/>
+      <RegExpr attribute="InText_NonLetters" context="#pop" String="[.;?,:،؛؟()[\]]"/>
+      <StringDetect attribute="InText_Poetry" context="#pop" String="%~%"/>
+
+    </context>
+
+  </contexts>
+
+  <itemDatas>
+
+    <itemData name="Normal Text" defStyleNum="dsNormal"/>
+    <!-- <itemData name="Normal Text" defStyleNum="dsNormal" color="#2C3E50" selColor="FFFFFF"/> -->
+    <itemData name="Uri" defStyleNum="dsNormal" color="#26A69A" selColor="#26A69A"/>
+
+    <!--
+    <itemData name="Milestone" defStyleNum="dsNormal" color="#F4D03F" backgroundColor="#1A5276" bold="true"/>
+    <itemData name="PageNo" defStyleNum="dsNormal" color="#fafad2" backgroundColor="#C39BD3" bold="true"/>
+    <itemData name="Poetry" defStyleNum="dsNormal" color="#fafad2" backgroundColor="#C39BD3" bold="true"/>
+    -->
+
+    <itemData name="InText_Pages"      defStyleNum="dsNormal" color="#B0BEC5" bold="false"/>
+    <itemData name="InText_Poetry"     defStyleNum="dsNormal" color="#6C3483" bold="true"/>
+    <itemData name="InText_Milestones" defStyleNum="dsNormal" color="#C0392B" bold="false"/>
+    <itemData name="InText_Numbers"    defStyleNum="dsNormal" color="#37474F" bold="true"/>
+    <itemData name="InText_NonLetters" defStyleNum="dsNormal" color="#566573" bold="true"/>
+
+    <itemData name="Header H1" defStyleNum="dsNormal" color="#D32F2F" selColor="#D32F2F" bold="true"/>
+    <itemData name="Header H2" defStyleNum="dsNormal" color="#E64A19" selColor="#E64A19" bold="true"/>
+    <itemData name="Header H3" defStyleNum="dsNormal" color="#FBC02D" selColor="#FBC02D" bold="true"/>
+    <itemData name="Header H4" defStyleNum="dsNormal" color="#388E3C" selColor="#388E3C" bold="true"/>
+    <itemData name="Header H5" defStyleNum="dsNormal" color="#1976D2" selColor="#1976D2" bold="true"/>
+    <itemData name="Header H6" defStyleNum="dsNormal" color="#303F9F" selColor="#303F9F" bold="true"/>
+    <itemData name="Header H7" defStyleNum="dsNormal" color="#7B1FA2" selColor="#7B1FA2" bold="true"/>
+    <itemData name="Header H8" defStyleNum="dsNormal" color="#880E4F" selColor="#880E4F" bold="true"/>
+    <itemData name="Header H9" defStyleNum="dsNormal" color="#880E4F" selColor="#880E4F" bold="true"/>
+    
+
+    <itemData name="MORPHO" defStyleNum="dsNormal" color="#FFB74D" selColor="#FFB74D" bold="true"/>
+    <itemData name="MORPHO_CAMeL" defStyleNum="dsNormal" color="#BDBDBD" selColor="#BDBDBD" bold="true"/>
+
+    <itemData name="BioMAN" defStyleNum="dsNormal" color="#138D75" selColor="#138D75" bold="true"/>
+    <itemData name="BioWOM" defStyleNum="dsNormal" color="#800080" selColor="#800080" bold="true"/>
+    <itemData name="BioREF" defStyleNum="dsNormal" color="#FFD700" selColor="#FFD700" bold="true"/>
+    <itemData name="BioNLI" defStyleNum="dsNormal" color="#32CD32" selColor="#32CD32" bold="true"/>
+
+    <itemData name="Event" defStyleNum="dsNormal" color="#FFD700"/>
+    <itemData name="EventList" defStyleNum="dsNormal" color="#32CD32"/>
+    <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#138D75" bold="true"/>
+
+    <itemData name="EditorHeader" defStyleNum="dsNormal" color="#7B68EE" bold="true"/>
+    <itemData name="Metadata" defStyleNum="dsComment" italic="false"/>
+    <itemData name="Editor" defStyleNum="dsComment"/>
+
+    <!-- NAMED ENTITIES -->
+    <itemData name="NER_AUTO" defStyleNum="dsNormal" color="#330066" selColor="#330066" underline="true" bold="true"/>
+    <itemData name="Toponym"  defStyleNum="dsNormal" color="#8E24AA" selColor="#8E24AA" underline="true" bold="true"/>
+    <itemData name="Person"   defStyleNum="dsNormal" color="#0288D1" selColor="#0288D1" underline="true" bold="true"/>
+    <itemData name="Book"     defStyleNum="dsNormal" color="#BF360C" selColor="#BF360C" underline="true" bold="true"/>
+    <itemData name="Nisbaŧs"  defStyleNum="dsNormal" color="#AFB42B" selColor="#AFB42B" underline="true" bold="true"/>
+    <itemData name="Year"     defStyleNum="dsNormal" color="#00796B" selColor="#00796B" underline="true" bold="true"/>
+    <itemData name="Age"      defStyleNum="dsNormal" color="#00695C" selColor="#00695C" underline="true" bold="true"/>
+
+    <!-- TEMPRORARY ELEMENTS NAMED ENTITIES -->
+    <itemData name="Provinces" defStyleNum="dsNormal" color="#FF00FF" selColor="#FF00FF" underline="true" bold="true"/>
+    <itemData name="Keywords"  defStyleNum="dsNormal" color="#AFB42B" selColor="#AFB42B" underline="true" bold="true"/>
+    <itemData name="Temp Tag"  defStyleNum="dsNormal" color="#FF0000" selColor="#FF0000" backgroundColor="#FF0000" underline="false" bold="true"/>
+
+
+
+ </itemDatas>
+</highlighting>
+<general></general>
+</language>
+
