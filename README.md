@@ -50,3 +50,7 @@
 ![](./IMAGES/eis1600_color4.png)
 
 
+
+# Issues
+
+- still not quite figured: I ould not figure how to add another "section" highlight, similar to YML in OpenITI mARkdown; it seems like you can only have one of them, without alternatives.
