@@ -84,7 +84,7 @@
 
       <!-- -->
 
-      <RegExpr attribute="Toponym" context="#stay" String="\b(T1[A-Z]?(\s&arabicChars;+){1}|T2[A-Z]?(\s&arabicChars;+){2}|T3[A-Z]?(\s&arabicChars;+){3}|T4[A-Z]?(\s&arabicChars;+){4}|T5[A-Z]?(\s&arabicChars;+){5}|T6[A-Z]?(\s&arabicChars;+){6}|T7[A-Z]?(\s&arabicChars;+){7}|T8[A-Z]?(\s&arabicChars;+){8}|T9[A-Z]?(\s&arabicChars;+){9})\b"/>
+      <RegExpr attribute="Toponym" context="#stay" String="(T1[A-Z]?(\s&arabicChars;+){1}|T2[A-Z]?(\s&arabicChars;+){2}|T3[A-Z]?(\s&arabicChars;+){3}|T4[A-Z]?(\s&arabicChars;+){4}|T5[A-Z]?(\s&arabicChars;+){5}|T6[A-Z]?(\s&arabicChars;+){6}|T7[A-Z]?(\s&arabicChars;+){7}|T8[A-Z]?(\s&arabicChars;+){8}|T9[A-Z]?(\s&arabicChars;+){9})"/>
 
       <RegExpr attribute="Person" context="#stay" weakDeliminator="\r" String="\b(P1[A-Z]?(\s&arabicChars;+){1}|P2[A-Z]?(\s&arabicChars;+){2}|P3[A-Z]?(\s&arabicChars;+){3}|P4[A-Z]?(\s&arabicChars;+){4}|P5[A-Z]?(\s&arabicChars;+){5}|P6[A-Z]?(\s&arabicChars;+){6}|P7[A-Z]?(\s&arabicChars;+){7}|P8[A-Z]?(\s&arabicChars;+){8}|P9[A-Z]?(\s&arabicChars;+){9}|P10[A-Z]?(\s&arabicChars;+){10}|P11[A-Z]?(\s&arabicChars;+){11}|P12[A-Z]?(\s&arabicChars;+){12}|P13[A-Z]?(\s&arabicChars;+){13}|P14[A-Z]?(\s&arabicChars;+){14}|P15[A-Z]?(\s&arabicChars;+){15}|P16[A-Z]?(\s&arabicChars;+){16}|P17[A-Z]?(\s&arabicChars;+){17}|P18[A-Z]?(\s&arabicChars;+){18}|P19[A-Z]?(\s&arabicChars;+){19}|P20[A-Z]?(\s&arabicChars;+){20})\b"/>
 
