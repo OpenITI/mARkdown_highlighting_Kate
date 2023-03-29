@@ -15,6 +15,7 @@
   <!ENTITY prefixLR "_[ءة]_">
   <!ENTITY arabicChars "[أدثسءزضلصگكٱآبڤرىطفهيپؤخإظغتةنـذعحائوجمقشچ]">
   <!ENTITY noArabic '[A-Za-z\d\s\"\(\)\-]'> <!-- [A-Za-z\d،»«٫٬:٪!@#^\&*()_\+=§±~`\\/.,;:\"\'-\]\[\}\{$%] -->
+  <!ENTITY nasabCats "(EXP|ISM|KUN|LAQ|NSB|SWM|SPL)" >
 
 
   <!ENTITY red      "#E74C3C">
@@ -106,6 +107,10 @@
 
       <RegExpr attribute="Misc" context="#stay" String="\b(M1[A-Z]?(&noArabic;+&arabicChars;+){1}|M2[A-Z]?(&noArabic;+&arabicChars;+){2}|M3[A-Z]?(&noArabic;+&arabicChars;+){3}|M4[A-Z]?(&noArabic;+&arabicChars;+){4}|M5[A-Z]?(&noArabic;+&arabicChars;+){5}|M6[A-Z]?(&noArabic;+&arabicChars;+){6}|M7[A-Z]?(&noArabic;+&arabicChars;+){7}|M8[A-Z]?(&noArabic;+&arabicChars;+){8}|M9[A-Z]?(&noArabic;+&arabicChars;+){9}|M10[A-Z]?(&noArabic;+&arabicChars;+){10}|M11[A-Z]?(&noArabic;+&arabicChars;+){11}|M12[A-Z]?(&noArabic;+&arabicChars;+){12}|M13[A-Z]?(&noArabic;+&arabicChars;+){13}|M14[A-Z]?(&noArabic;+&arabicChars;+){14}|M15[A-Z]?(&noArabic;+&arabicChars;+){15}|M16[A-Z]?(&noArabic;+&arabicChars;+){16}|M17[A-Z]?(&noArabic;+&arabicChars;+){17}|M18[A-Z]?(&noArabic;+&arabicChars;+){18}|M19[A-Z]?(&noArabic;+&arabicChars;+){19}|M20[A-Z]?(&noArabic;+&arabicChars;+){20})"/>      
 
+      <RegExpr attribute="NASAB_AUTO" context="#stay" String="\b(Ü&nasabCats;1(___Ü&nasabCats;1)?(&noArabic;+&arabicChars;+){1}|Ü&nasabCats;2(___Ü&nasabCats;2)?(&noArabic;+&arabicChars;+){2}|Ü&nasabCats;3(___Ü&nasabCats;3)?(&noArabic;+&arabicChars;+){3}|Ü&nasabCats;4(___Ü&nasabCats;4)?(&noArabic;+&arabicChars;+){4}|Ü&nasabCats;5(___Ü&nasabCats;5)?(&noArabic;+&arabicChars;+){5}|Ü&nasabCats;6(___Ü&nasabCats;6)?(&noArabic;+&arabicChars;+){6}|Ü&nasabCats;7(___Ü&nasabCats;7)?(&noArabic;+&arabicChars;+){7}|Ü&nasabCats;8(___Ü&nasabCats;8)?(&noArabic;+&arabicChars;+){8}|Ü&nasabCats;9(___Ü&nasabCats;9)?(&noArabic;+&arabicChars;+){9})"/>
+
+      <RegExpr attribute="NASAB_CAT" context="#stay" String="\b(&nasabCats;1(&noArabic;+&arabicChars;+){1}|&nasabCats;2(&noArabic;+&arabicChars;+){2}|&nasabCats;3(&noArabic;+&arabicChars;+){3}|&nasabCats;4(&noArabic;+&arabicChars;+){4}|&nasabCats;5(&noArabic;+&arabicChars;+){5}|&nasabCats;6(&noArabic;+&arabicChars;+){6}|&nasabCats;7(&noArabic;+&arabicChars;+){7}|&nasabCats;8(&noArabic;+&arabicChars;+){8}|&nasabCats;9(&noArabic;+&arabicChars;+){9})"/>
+
       <!-- SOME TEMPORARY ENTITIES: for 1339IsmacilBashaBaghdadi.HadiyaCarifin Analysis [476129001621]-->
       <RegExpr attribute="Provinces" context="#pop" String="(AND|MGR|IFR|BRQ|MSR|RUM|SAM|HJZ|YMN|CMN|CRQ|AQR|RHB|JBL|FRS|SJS|HND|KHR|KHW|MWN|EUR|AFR|ITL|QRM|ITL)(\W+\w+){1}\b"/>
       <RegExpr attribute="Genres" context="#pop" String="\b(BLG|TFS|HDT|ECR|TBB|SIR|FQH|NHW|JGR|DOX|TRX|TRJ|FHR|KLM|YUN|ADB|[A-Z]{3})\.$"/>
@@ -182,6 +187,8 @@
     <itemData name="Age"      defStyleNum="dsNormal" color="#00695C" selColor="#00695C" underline="true" bold="true"/>
     <itemData name="Misc"     defStyleNum="dsNormal" color="#BF360C" selColor="#BF360C" underline="true" bold="true"/>
 
+    <itemData name="NASAB_AUTO" defStyleNum="dsNormal" color="#333CFF" selColor="#333CFF" underline="true" bold="true"/>
+    <itemData name="NASAB_CAT" defStyleNum="dsNormal" color="#FF7C40" selColor="#FF7C40" underline="true" bold="true"/>
 
     <!-- SPLIT TAGS -->
     <itemData name="Split-NASAB" defStyleNum="dsNormal" color="#FFB74D" selColor="#FFB74D" bold="true"/>
