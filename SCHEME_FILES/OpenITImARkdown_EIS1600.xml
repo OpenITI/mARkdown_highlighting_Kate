@@ -15,7 +15,7 @@
   <!ENTITY prefixLR "_[ءة]_">
   <!ENTITY arabicChars "[أدثسءزضلصگكٱآبڤرىطفهيپؤخإظغتةنـذعحائوجمقشچ]">
   <!ENTITY noArabic '[A-Za-z\d\s\"\(\)\-]'> <!-- [A-Za-z\d،»«٫٬:٪!@#^\&*()_\+=§±~`\\/.,;:\"\'-\]\[\}\{$%] -->
-  <!ENTITY nasabCats "(EXP|ISM|KUN|LAQ|NSB|SWM)" >
+  <!ENTITY nasabCats "(EXP|ISM|KUN|LAQ|NSB|SWM|SPL)" >
 
 
   <!ENTITY red      "#E74C3C">
