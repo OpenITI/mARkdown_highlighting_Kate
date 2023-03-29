@@ -108,6 +108,7 @@
 
       <!-- SOME TEMPORARY ENTITIES: for 1339IsmacilBashaBaghdadi.HadiyaCarifin Analysis [476129001621]-->
       <RegExpr attribute="Provinces" context="#pop" String="(AND|MGR|IFR|BRQ|MSR|RUM|SAM|HJZ|YMN|CMN|CRQ|AQR|RHB|JBL|FRS|SJS|HND|KHR|KHW|MWN|EUR|AFR|ITL|QRM|ITL)(\W+\w+){1}\b"/>
+      <RegExpr attribute="Genres" context="#pop" String="\b(BLG|TFS|HDT|ECR|TBB|SIR|FQH|NHW|JGR|DOX|TRX|TRJ|FHR|KLM|YUN|ADB|[A-Z]{3})\.$"/>
       <RegExpr attribute="Keywords"  context="#pop" String="\b(W1[A-Z]?([A-Z]\d+A)?(\W+\w+){1}|W2[A-Z]?([A-Z]\d+A)?(\W+\w+){2}|W3[A-Z]?([A-Z]\d+A)?(\W+\w+){3})"/>
       <RegExpr attribute="Temp Tag"  context="#pop" String="§§§"/>
 
@@ -187,6 +188,7 @@
 
     <!-- TEMPRORARY ELEMENTS NAMED ENTITIES -->
     <itemData name="Provinces" defStyleNum="dsNormal" color="#FF00FF" selColor="#FF00FF" underline="true" bold="true"/>
+    <itemData name="Genres" defStyleNum="dsNormal" color="#FF00FF" selColor="#FF00FF" underline="true" bold="true"/>
     <itemData name="Keywords"  defStyleNum="dsNormal" color="#AFB42B" selColor="#AFB42B" underline="true" bold="true"/>
     <itemData name="Temp Tag"  defStyleNum="dsNormal" color="#FF0000" selColor="#FF0000" backgroundColor="#FF0000" underline="false" bold="true"/>
 
