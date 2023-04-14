@@ -15,7 +15,7 @@
   <!ENTITY prefixLR "_[ءة]_">
   <!ENTITY arabicChars "[أدثسءزضلصگكٱآبڤرىطفهيپؤخإظغتةنـذعحائوجمقشچ]">
   <!ENTITY noArabic '[A-Za-z\d\s\"\(\)\-]'> <!-- [A-Za-z\d،»«٫٬:٪!@#^\&*()_\+=§±~`\\/.,;:\"\'-\]\[\}\{$%] -->
-  <!ENTITY nasabCats "(EXP|ISM|KUN|LAQ|NSB|SWM|SPL)" >
+  <!ENTITY nasabCats "(EXP|ISM|KUN|LQB|NAS|NSB|SHR|SPL)" >
 
 
   <!ENTITY red      "#E74C3C">
@@ -46,7 +46,7 @@
 
       <!-- METADATA HEADERS 0-->
       <RegExpr attribute="MetadataHeaders" context="#pop" String="######OpenITI#|#META#Header#End#|#MIU#Header#(Begin|End)#" column="0" endRegion="section" beginRegion="section"/>
-      
+
 
       <!-- HEADERS -->
       <RegExpr attribute="Header H1" context="#pop" String="(&prefixLR;#=\d{12}= |# )\|{1}(?![\|\w])" column="0" endRegion="section" beginRegion="section"/>
@@ -88,7 +88,7 @@
       <RegExpr attribute="MORPHO_CAMeL" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+_CAMeL:: )+~" column="0"/>
 
       <RegExpr attribute="Uri" context="#pop" String="\d\d\d\d[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z\d]+-[a-z]{3}\d+)?)?"/>
-      
+
       <!-- NAMED ENTITIES:[T]oponyms, [P]ersons, [N]isbaŧ/Descriptor, [Y]ear, [A]ge; the list can be expanded as needed -->
 
       <RegExpr attribute="NER_AUTO" context="#stay" String="(Ü[A-Z]10([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){10}|Ü[A-Z]11([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){11}|Ü[A-Z]12([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){12}|Ü[A-Z]13([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){13}|Ü[A-Z]14([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){14}|Ü[A-Z]15([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){15}|Ü[A-Z]16([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){16}|Ü[A-Z]17([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){17}|Ü[A-Z]18([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){18}|Ü[A-Z]19([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){19}|Ü[A-Z]20([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){20}|Ü[A-Z]1([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){9}|ÜNASAB)"/>
@@ -105,7 +105,7 @@
 
       <RegExpr attribute="Age" context="#stay" String="\b(A1[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){1}|A2[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){2}|A3[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){3}|A4[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){4}|A5[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){5}|A6[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){6}|A7[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){7}|A8[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){8}|A9[A-Z]?([A-Z]\d+A)?(&noArabic;+&arabicChars;+){9})"/>
 
-      <RegExpr attribute="Misc" context="#stay" String="\b(M1[A-Z]?(&noArabic;+&arabicChars;+){1}|M2[A-Z]?(&noArabic;+&arabicChars;+){2}|M3[A-Z]?(&noArabic;+&arabicChars;+){3}|M4[A-Z]?(&noArabic;+&arabicChars;+){4}|M5[A-Z]?(&noArabic;+&arabicChars;+){5}|M6[A-Z]?(&noArabic;+&arabicChars;+){6}|M7[A-Z]?(&noArabic;+&arabicChars;+){7}|M8[A-Z]?(&noArabic;+&arabicChars;+){8}|M9[A-Z]?(&noArabic;+&arabicChars;+){9}|M10[A-Z]?(&noArabic;+&arabicChars;+){10}|M11[A-Z]?(&noArabic;+&arabicChars;+){11}|M12[A-Z]?(&noArabic;+&arabicChars;+){12}|M13[A-Z]?(&noArabic;+&arabicChars;+){13}|M14[A-Z]?(&noArabic;+&arabicChars;+){14}|M15[A-Z]?(&noArabic;+&arabicChars;+){15}|M16[A-Z]?(&noArabic;+&arabicChars;+){16}|M17[A-Z]?(&noArabic;+&arabicChars;+){17}|M18[A-Z]?(&noArabic;+&arabicChars;+){18}|M19[A-Z]?(&noArabic;+&arabicChars;+){19}|M20[A-Z]?(&noArabic;+&arabicChars;+){20})"/>      
+      <RegExpr attribute="Misc" context="#stay" String="\b(M1[A-Z]?(&noArabic;+&arabicChars;+){1}|M2[A-Z]?(&noArabic;+&arabicChars;+){2}|M3[A-Z]?(&noArabic;+&arabicChars;+){3}|M4[A-Z]?(&noArabic;+&arabicChars;+){4}|M5[A-Z]?(&noArabic;+&arabicChars;+){5}|M6[A-Z]?(&noArabic;+&arabicChars;+){6}|M7[A-Z]?(&noArabic;+&arabicChars;+){7}|M8[A-Z]?(&noArabic;+&arabicChars;+){8}|M9[A-Z]?(&noArabic;+&arabicChars;+){9}|M10[A-Z]?(&noArabic;+&arabicChars;+){10}|M11[A-Z]?(&noArabic;+&arabicChars;+){11}|M12[A-Z]?(&noArabic;+&arabicChars;+){12}|M13[A-Z]?(&noArabic;+&arabicChars;+){13}|M14[A-Z]?(&noArabic;+&arabicChars;+){14}|M15[A-Z]?(&noArabic;+&arabicChars;+){15}|M16[A-Z]?(&noArabic;+&arabicChars;+){16}|M17[A-Z]?(&noArabic;+&arabicChars;+){17}|M18[A-Z]?(&noArabic;+&arabicChars;+){18}|M19[A-Z]?(&noArabic;+&arabicChars;+){19}|M20[A-Z]?(&noArabic;+&arabicChars;+){20})"/>
 
       <RegExpr attribute="NASAB_AUTO" context="#stay" String="\b(Ü&nasabCats;1(___Ü&nasabCats;1)?(&noArabic;+&arabicChars;+){1}|Ü&nasabCats;2(___Ü&nasabCats;2)?(&noArabic;+&arabicChars;+){2}|Ü&nasabCats;3(___Ü&nasabCats;3)?(&noArabic;+&arabicChars;+){3}|Ü&nasabCats;4(___Ü&nasabCats;4)?(&noArabic;+&arabicChars;+){4}|Ü&nasabCats;5(___Ü&nasabCats;5)?(&noArabic;+&arabicChars;+){5}|Ü&nasabCats;6(___Ü&nasabCats;6)?(&noArabic;+&arabicChars;+){6}|Ü&nasabCats;7(___Ü&nasabCats;7)?(&noArabic;+&arabicChars;+){7}|Ü&nasabCats;8(___Ü&nasabCats;8)?(&noArabic;+&arabicChars;+){8}|Ü&nasabCats;9(___Ü&nasabCats;9)?(&noArabic;+&arabicChars;+){9})"/>
 
@@ -125,7 +125,7 @@
       <StringDetect attribute="InText_Poetry" context="#pop" String="%~%"/>
 
       <!-- SPLITTING TAGS: these mark the beginnings and ends of some long textual elements -->
-      <RegExpr attribute="Split-NASAB" context="#pop" String="\bNASAB\b"/>  
+      <RegExpr attribute="Split-NASAB" context="#pop" String="\bNASAB\b"/>
 
     </context>
 
@@ -158,7 +158,7 @@
     <itemData name="Header H7" defStyleNum="dsNormal" color="#7B1FA2" selColor="#7B1FA2" bold="true"/>
     <itemData name="Header H8" defStyleNum="dsNormal" color="#880E4F" selColor="#880E4F" bold="true"/>
     <itemData name="Header H9" defStyleNum="dsNormal" color="#880E4F" selColor="#880E4F" bold="true"/>
-    
+
 
     <itemData name="MORPHO" defStyleNum="dsNormal" color="#FFB74D" selColor="#FFB74D" bold="true"/>
     <itemData name="MORPHO_CAMeL" defStyleNum="dsNormal" color="#BDBDBD" selColor="#BDBDBD" bold="true"/>
