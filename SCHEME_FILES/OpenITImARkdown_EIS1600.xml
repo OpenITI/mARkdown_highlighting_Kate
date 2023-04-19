@@ -83,6 +83,10 @@
       <!-- HEADERS: MIU - EVENTS :: THIS IS ACTUALLY NOT NECESSARY, SINCE WE CAN USE §§§ AS A PROXY TO A SINGLE EVENT-->
       <RegExpr attribute="Event" context="#pop" String="(&prefixLR;#=\d{12}= |# )(@?(?![@?\w])|\$CHR_EVE\$)" column="0" endRegion="section" beginRegion="section"/>
 
+      <!-- EVENT CATEGORIZATION -->
+      <RegExpr attribute="Event" context="#pop" String="::( [A-Z]+)+ ::$" column="0"/>
+
+
       <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
       <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
       <RegExpr attribute="MORPHO_CAMeL" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+_CAMeL:: )+~" column="0"/>
@@ -111,6 +115,9 @@
 
       <RegExpr attribute="NASAB_CAT" context="#stay" String="\b(&nasabCats;1(&noArabic;+&arabicChars;+){1}|&nasabCats;2(&noArabic;+&arabicChars;+){2}|&nasabCats;3(&noArabic;+&arabicChars;+){3}|&nasabCats;4(&noArabic;+&arabicChars;+){4}|&nasabCats;5(&noArabic;+&arabicChars;+){5}|&nasabCats;6(&noArabic;+&arabicChars;+){6}|&nasabCats;7(&noArabic;+&arabicChars;+){7}|&nasabCats;8(&noArabic;+&arabicChars;+){8}|&nasabCats;9(&noArabic;+&arabicChars;+){9})"/>
 
+      <!-- EVENT CLASSIFICATION KEYWORDS :: TAGGED IN TEXTS -->
+      <RegExpr attribute="Keywords" context="#stay" String="\b(K1(&noArabic;+&arabicChars;+){1})"/>
+
       <!-- SOME TEMPORARY ENTITIES: for 1339IsmacilBashaBaghdadi.HadiyaCarifin Analysis [476129001621]-->
       <RegExpr attribute="Provinces" context="#pop" String="(AND|MGR|IFR|BRQ|MSR|RUM|SAM|HJZ|YMN|CMN|CRQ|AQR|RHB|JBL|FRS|SJS|HND|KHR|KHW|MWN|EUR|AFR|ITL|QRM|ITL)(\W+\w+){1}\b"/>
       <RegExpr attribute="Genres" context="#pop" String="\b(BLG|TFS|HDT|ECR|TBB|SIR|FQH|NHW|JGR|DOX|TRX|TRJ|FHR|KLM|YUN|ADB|[A-Z]{3})\.$"/>
@@ -125,7 +132,7 @@
       <StringDetect attribute="InText_Poetry" context="#pop" String="%~%"/>
 
       <!-- SPLITTING TAGS: these mark the beginnings and ends of some long textual elements -->
-      <RegExpr attribute="Split-NASAB" context="#pop" String="\bNASAB\b"/>
+      <RegExpr attribute="Split-NASAB" context="#pop" String="\b[EB]?NASAB\b"/>
 
     </context>
 
@@ -168,8 +175,8 @@
     <itemData name="BioREF" defStyleNum="dsNormal" color="#FFD700" selColor="#FFD700" bold="true"/>
     <itemData name="BioNLI" defStyleNum="dsNormal" color="#32CD32" selColor="#32CD32" bold="true"/>
 
-    <itemData name="Event" defStyleNum="dsNormal" color="#FFD700"/>
-    <itemData name="EventList" defStyleNum="dsNormal" color="#32CD32"/>
+    <itemData name="Event" defStyleNum="dsNormal" color="#FFD700" bold="true"/>
+    <itemData name="EventList" defStyleNum="dsNormal" color="#32CD32" bold="true"/>
     <itemData name="DictionaryItem" defStyleNum="dsNormal" color="#138D75" bold="true"/>
 
     <itemData name="EditorHeader" defStyleNum="dsNormal" color="#7B68EE" bold="true"/>
