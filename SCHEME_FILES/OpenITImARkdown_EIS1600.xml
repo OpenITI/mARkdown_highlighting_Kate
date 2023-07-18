@@ -95,7 +95,7 @@
 
       <!-- NAMED ENTITIES:[T]oponyms, [P]ersons, [N]isbaŧ/Descriptor, [Y]ear, [A]ge; the list can be expanded as needed -->
 
-      <RegExpr attribute="NER_AUTO" context="#stay" String="(Ü[A-Z]10([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){10}|Ü[A-Z]11([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){11}|Ü[A-Z]12([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){12}|Ü[A-Z]13([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){13}|Ü[A-Z]14([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){14}|Ü[A-Z]15([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){15}|Ü[A-Z]16([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){16}|Ü[A-Z]17([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){17}|Ü[A-Z]18([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){18}|Ü[A-Z]19([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){19}|Ü[A-Z]20([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){20}|Ü[A-Z]1([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){9}|ÜNASAB)"/>
+      <RegExpr attribute="NER_AUTO" context="#stay" String="(Ü[A-Z]10([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){10}|Ü[A-Z]11([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){11}|Ü[A-Z]12([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){12}|Ü[A-Z]13([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){13}|Ü[A-Z]14([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){14}|Ü[A-Z]15([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){15}|Ü[A-Z]16([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){16}|Ü[A-Z]17([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){17}|Ü[A-Z]18([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){18}|Ü[A-Z]19([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){19}|Ü[A-Z]20([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){20}|Ü[A-Z]1([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){1}|Ü[A-Z]2([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){2}|Ü[A-Z]3([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){3}|Ü[A-Z]4([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){4}|Ü[A-Z]5([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){5}|Ü[A-Z]6([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){6}|Ü[A-Z]7([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){7}|Ü[A-Z]8([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){8}|Ü[A-Z]9([A-Z]\d+[A-Z])?(&noArabic;+&arabicChars;+){9}|Ü(:?NASAB|ONOM))"/>
 
       <RegExpr attribute="Toponym" context="#stay" String="\b(T1[A-Z]?(&noArabic;+&arabicChars;+){1}|T2[A-Z]?(&noArabic;+&arabicChars;+){2}|T3[A-Z]?(&noArabic;+&arabicChars;+){3}|T4[A-Z]?(&noArabic;+&arabicChars;+){4}|T5[A-Z]?(&noArabic;+&arabicChars;+){5}|T6[A-Z]?(&noArabic;+&arabicChars;+){6}|T7[A-Z]?(&noArabic;+&arabicChars;+){7}|T8[A-Z]?(&noArabic;+&arabicChars;+){8}|T9[A-Z]?(&noArabic;+&arabicChars;+){9})"/>
 
@@ -132,7 +132,7 @@
       <StringDetect attribute="InText_Poetry" context="#pop" String="%~%"/>
 
       <!-- SPLITTING TAGS: these mark the beginnings and ends of some long textual elements -->
-      <RegExpr attribute="Split-NASAB" context="#pop" String="\b[EB]?NASAB\b"/>
+      <RegExpr attribute="Split-NASAB" context="#pop" String="\b[EB]?(:?NASAB|ONOM)\b"/>
 
     </context>
 
