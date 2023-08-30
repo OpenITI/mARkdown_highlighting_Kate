@@ -133,7 +133,7 @@
       <StringDetect attribute="InText_Poetry" context="#pop" String="%~%"/>
 
       <!-- SPLITTING TAGS: these mark the beginnings and ends of some long textual elements -->
-      <RegExpr attribute="Split-NASAB" context="#pop" String="\b[EB]?(:?NASAB|ONOM)\b"/>
+      <RegExpr attribute="Split-NASAB" context="#pop" String="\b[EB]?(:?NASAB|ONOM|TOPD|NISD)\b"/>
 
     </context>
 
