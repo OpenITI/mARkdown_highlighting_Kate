@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language name="OpenITImARkdown, EIS1600 flavor" version="1" kateversion="5.0" section="" extensions="*.EIS1600_temp;*.EIS1600;*.EIS1600TMP;*.INDICES" priority="1" author="Maxim Romanov, EIS1600" license="GPL">
-
-
-<!-- COMMENTS
-
-- LINUX: word boundaries (\b) do not work with Arabic on Linux
-- LINUX: `arabicChars` (see below) must be used for Arabic letters, because \w-class does not include Arabic letters
-
--->
-
-
 <!DOCTYPE language SYSTEM "language.dtd"
 [
   <!ENTITY prefixLR "_[ءة]_">
@@ -27,19 +16,24 @@
   <!ENTITY blueDark "#3498DB">
   <!ENTITY violet   "#BB8FCE">
 
-]
->
+]>
+<language name="OpenITImARkdown, EIS1600 flavor" version="1" kateversion="5.0" section="Markup" extensions="*.EIS1600_temp;*.EIS1600;*.EIS1600TMP;*.INDICES" priority="1" author="Maxim Romanov, EIS1600" license="GPL">
+
+<!-- COMMENTS
+
+- LINUX: word boundaries (\b) do not work with Arabic on Linux
+- LINUX: `arabicChars` (see below) must be used for Arabic letters, because \w-class does not include Arabic letters
+
+-->
 
 <highlighting>
-  <list>
-  </list>
   <contexts>
 
     <context name="Start Document" attribute="Normal Text" lineEndContext="Body" lineEmptyContext="Body" fallthroughContext="Body">
       <RegExpr attribute="Metadata" context="MetadataText" String="######OpenITI#" column="0" beginRegion="metadata"/>
     </context>
     <context name="MetadataText" attribute="Metadata" lineEndContext="#stay">
-      <StringDetect attribute="Metadata" context="#pop!Body" fallthroughContext="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
+      <StringDetect attribute="Metadata" context="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
     </context>
 
 
@@ -89,8 +83,8 @@
 
 
       <!-- MORPHO ELEMENTS IN BIOGRAPHIES; ALSO §§ EVENTS -->
-      <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}(-\d{8})?= (::[A-Z]+:: )+~$" column="0"/>
-      <RegExpr attribute="MORPHO_CAMeL" context="#pop" String="&prefixLR;=\d{12}(-\d{8})?= (::[A-Z]+_CAMeL:: )+~" column="0"/>
+      <RegExpr attribute="MORPHO" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+:: )+~$" column="0"/>
+      <RegExpr attribute="MORPHO_CAMeL" context="#pop" String="&prefixLR;=\d{12}= (::[A-Z]+_CAMeL:: )+~" column="0"/>
 
       <RegExpr attribute="Uri" context="#pop" String="\d\d\d\d[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z]+(?:\.[A-Z][a-zA-Z\d]+-[a-z]{3}\d+)?)?"/>
 

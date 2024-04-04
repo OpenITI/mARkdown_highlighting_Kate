@@ -2,17 +2,15 @@
 <language name="OpenITImARkdown" version="1" kateversion="5.0" section="Markup" extensions="*.inProgress;*.mARkdown;*.completed" priority="9" author="Peter Verkinderen" license="GPL">
 
 <highlighting>
-  <list>
-  </list>
   <contexts>
     <context name="Start Document" attribute="Normal Text" lineEndContext="Body" lineEmptyContext="Body" fallthroughContext="Body">
       <RegExpr attribute="Metadata" context="MetadataText" String="^######OpenITI#" column="0" beginRegion="metadata"/>
     </context>
     <context name="MetadataText" attribute="Metadata" lineEndContext="#stay">
-      <StringDetect attribute="Metadata" context="#pop!Body" fallthroughContext="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
+      <StringDetect attribute="Metadata" context="#pop!Body" String="#META#Header#End#" column="0" endRegion="metadata"/>
     </context>
     <context name="EditorialText" attribute="Editor" lineEndContext="#stay" lineEmptyContext="#stay">
-      <Detect2Chars attribute="Editor" context="#pop!Body" fallthroughContext="#pop!Body" char="#" char1="#" column="0" endRegion="editorial" lookAhead="true"/>
+      <Detect2Chars attribute="Editor" context="#pop!Body" char="#" char1="#" column="0" endRegion="editorial" lookAhead="true"/>
     </context>
     <context name="Body" attribute="Normal Text" lineEndContext="#stay" lineEmptyContext="#stay">
       <RegExpr attribute="Header H1" context="#pop" String="### \| .*$" column="0" endRegion="section" beginRegion="section"/>
