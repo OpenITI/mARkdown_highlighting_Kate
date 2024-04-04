@@ -55,5 +55,5 @@
 
 - still not quite figured: I ould not figure how to add another "section" highlight, similar to YML in OpenITI mARkdown; it seems like you can only have one of them, without alternatives.
 
-- If the syntax is not recognised after and update, validate your schema following the instructions at the button of this page from the [official documentation](https://docs.kde.org/stable5/en/kate/katepart/highlight.html). You will need to pass it's file to the validation, e.g.: `$ bash validatehl.sh SCHEME_FILES/OpenITImARkdown_EIS1600.xml`
+- If the syntax is not recognised after an update, validate your schema following the instructions at the bottom of this page from the [official documentation](https://docs.kde.org/stable5/en/kate/katepart/highlight.html). You will need to pass each file to the validator, e.g.: `$ bash validatehl.sh SCHEME_FILES/OpenITImARkdown_EIS1600.xml`
 
